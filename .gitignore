@@ -1,0 +1,8 @@
+# Ignore source downloads
+*.tar.gz
+
+# Ignore RPM artifacts
+*.src.rpm
+
+# Ignore build directories
+*/results_**/*
