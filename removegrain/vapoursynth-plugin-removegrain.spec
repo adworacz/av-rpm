@@ -10,6 +10,8 @@ URL:            https://github.com/vapoursynth/vs-removegrain
 Source0:        https://github.com/vapoursynth/vs-removegrain/archive/%{commit}/%{name}-%{version}.tar.gz
 
 BuildRequires:  meson
+BuildRequires:  gcc-c++
+BuildRequires:  vapoursynth-devel
 Requires:       vapoursynth-libs
 
 %description
