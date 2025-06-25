@@ -1,0 +1,12 @@
+--- configure	2025-06-23 13:47:16.668576486 -0700
++++ configure.2	2025-06-23 13:48:44.150105844 -0700
+@@ -172,9 +172,6 @@
+         --extra-libs=*)
+             XLIBS="$optarg"
+             ;;
+-        *)
+-            error_exit "unknown option $opt"
+-            ;;
+     esac
+ done
+ 

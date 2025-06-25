@@ -1,0 +1,28 @@
+--- Makefile	2025-06-22 15:12:49.798392814 -0700
++++ Makefile.2	2025-06-22 15:14:13.262594539 -0700
+@@ -34,19 +34,19 @@
+ 	@install -v obuparse.h $(PREFIX)/include
+ 
+ install-shared: libobuparse$(LIBSUF) install-header
+-	@install -d $(PREFIX)/lib
++	@install -d $(PREFIX)/lib64
+ ifneq ($(SYSTEM),MINGW)
+-	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib/libobuparse$(LIBSUF).1
+-	@rm -fv $(PREFIX)/lib/libobuparse$(LIBSUF)
+-	@ln -sv libobuparse$(LIBSUF).1 $(PREFIX)/lib/libobuparse$(LIBSUF)
++	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib64/libobuparse$(LIBSUF).1
++	@rm -fv $(PREFIX)/lib64/libobuparse$(LIBSUF)
++	@ln -sv libobuparse$(LIBSUF).1 $(PREFIX)/lib64/libobuparse$(LIBSUF)
+ else
+ 	@install -d $(PREFIX)/bin
+ 	@install -v libobuparse$(LIBSUF) $(PREFIX)/bin/libobuparse$(LIBSUF)
+ endif
+ 
+ install-static: libobuparse.a install-header
+-	@install -d $(PREFIX)/lib
+-	@install -v libobuparse.a $(PREFIX)/lib/libobuparse.a
++	@install -d $(PREFIX)/lib64
++	@install -v libobuparse.a $(PREFIX)/lib64/libobuparse.a
+ 
+ uninstall:
+ 	@rm -fv $(PREFIX)/include/obuparse.h

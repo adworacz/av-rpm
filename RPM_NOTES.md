@@ -14,6 +14,15 @@ spectool -g foo.spec
 fedpkg --release 42 mockbuild
 ```
 
+## Build multiple dependent packages together.
+Given an example of package A which depends on package B:
+
+1. Create SRPM files for both packages. `fedpkg --release f42 srpm` in each directory is a great help.
+2. Run a mock build (which writes results to a local `.results` directory) that chains both together:
+`mock --localrepo .results --chain path/to/package-b.srpm path/to/packaga-a.srpm`
+
+Note the order of the `--chain` params
+
 # Setup - RPM compatible
 
 ```sh
