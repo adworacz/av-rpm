@@ -6,3 +6,4 @@
 
 # Ignore build directories
 */results_**/*
+/.results
