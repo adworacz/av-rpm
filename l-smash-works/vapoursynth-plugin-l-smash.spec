@@ -1,4 +1,4 @@
-Name:           l-smash-works
+Name:           vapoursynth-plugin-l-smash
 Version:        1253.0.0.0
 Release:        %autorelease
 Summary:        A source plugin for AviSynth and VapourSynth
