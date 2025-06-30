@@ -9,6 +9,19 @@ Source0:        https://github.com/rust-av/Av1an/archive/refs/tags/%{version}.ta
 
 BuildRequires:  cargo
 BuildRequires:  rust
+BuildRequires:  clang
+
+# Rav1e dep
+BuildRequires:  nasm
+
+# FFmpeg the third deps
+BuildRequires:  pkgconfig(libavutil)
+BuildRequires:  pkgconfig(libavcodec)
+BuildRequires:  pkgconfig(libavformat)
+BuildRequires:  pkgconfig(libavdevice)
+BuildRequires:  pkgconfig(libavfilter)
+BuildRequires:  pkgconfig(libswscale)
+BuildRequires:  pkgconfig(libswresample)
 
 # TODO: Weak dependencies on encoders/vapoursynth?
 
