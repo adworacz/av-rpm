@@ -23,6 +23,13 @@ Given an example of package A which depends on package B:
 
 Note the order of the `--chain` params
 
+## Build packages that require network access
+For example rust packages using cargo directly need network access.
+
+```
+fedpkg --release 42 mockbuild --enable-network
+```
+
 # Setup - RPM compatible
 
 ```sh
