@@ -51,5 +51,4 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-* Wed Jun 25 2025 Austin Dworaczyk Wiltshire <adw.wiltshire@gmail.com>
-- Initial commit.
+%autochangelog
