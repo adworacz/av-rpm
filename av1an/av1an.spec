@@ -47,5 +47,4 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 
 %changelog
-* Sun Jun 29 2025 Austin Dworaczyk Wiltshire <adw.wiltshire@gmail.com>
-- Initial commit.
+%autochangelog
