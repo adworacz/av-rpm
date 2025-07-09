@@ -36,5 +36,4 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-* Sat Jun 21 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com>
-- Initial package creation.
+%autochangelog
