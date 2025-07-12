@@ -7,7 +7,7 @@ Summary:        VapourSynth Zig Image Process
 
 License:        MIT
 URL:            https://github.com/dnjulek/vapoursynth-zip
-Source0:        https://github.com/dnjulek/vapoursynth-zip/archive/refs/tags/R7.tar.gz
+Source0:        https://github.com/dnjulek/vapoursynth-zip/archive/refs/tags/R%{version}.tar.gz
 
 BuildRequires:  zig
 BuildRequires:  pkgconfig(vapoursynth)
