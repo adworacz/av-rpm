@@ -1,0 +1,13 @@
+--- vapoursynth-resize2-0.3.3-orig/meson.build	2025-07-01 07:49:42.000000000 -0700
++++ vapoursynth-resize2-0.3.3/meson.build	2025-07-13 10:53:11.088824731 -0700
+@@ -17,8 +17,7 @@
+ 
+ shared_module('resize2', sources,
+     dependencies: deps,
+-    link_args: ['-static'],
+     install : true,
+     install_dir : join_paths(vapoursynth_dep.get_variable(pkgconfig: 'libdir'), 'vapoursynth'),
+     gnu_symbol_visibility : 'hidden',
+-)
+\ No newline at end of file
++)

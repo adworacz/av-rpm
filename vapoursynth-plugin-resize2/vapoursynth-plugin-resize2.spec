@@ -13,14 +13,19 @@ BuildRequires:  meson
 BuildRequires:  gcc-c++
 BuildRequires:  git
 BuildRequires:  pkgconfig(vapoursynth)
+
 Requires:       vapoursynth-libs
+
+# https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/issues/12
+Patch0: 0001-remove-no-format.patch
+Patch1: 0002-remove-static-linking.patch
 
 %description
 %{summary}
 
 
 %prep
-%autosetup -n vapoursynth-resize2-%{version}
+%autosetup -p1 -n vapoursynth-resize2-%{version}
 
 meson subprojects download
 
@@ -34,8 +39,7 @@ meson subprojects download
 
 
 %files
-%license LICENSE
-%doc README.md
+%doc ReadMe.md
 %{_libdir}/vapoursynth/libresize2.so
 
 %changelog

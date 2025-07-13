@@ -1,0 +1,12 @@
+diff -ru vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build
+--- vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build	2025-07-01 07:49:42.000000000 -0700
++++ vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build	2025-07-13 10:40:17.548101006 -0700
+@@ -7,7 +7,7 @@
+ cxx = meson.get_compiler('cpp')
+ 
+ compile_args = [
+-    '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-format', '-Wno-endif-labels',
++    '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-Wno-endif-labels',
+     '-lstdc++', '-fvisibility=hidden', '-DGRAPHENGINE_IMPL_NAMESPACE=zimg'
+ ]
+ 
