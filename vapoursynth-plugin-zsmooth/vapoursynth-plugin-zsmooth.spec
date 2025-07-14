@@ -13,6 +13,9 @@ BuildRequires:  zig
 BuildRequires:  pkgconfig(vapoursynth)
 Requires:       vapoursynth-libs
 
+# EPEL 10 doesn't have Zig yet.
+ExcludeOS: epel-10
+
 %description
 %{summary}
 
