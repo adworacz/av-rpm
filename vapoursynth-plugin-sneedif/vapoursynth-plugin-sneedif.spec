@@ -16,6 +16,9 @@ Requires:       vapoursynth-libs
 
 Patch0: 0001-fix-meson-build.patch
 
+# Only seems buildable on x86_64...
+ExclusiveArch: x86_64
+
 %description
 %{summary}
 
