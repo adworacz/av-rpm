@@ -28,7 +28,7 @@ ExclusiveArch: x86_64
 
 
 %build
-%meson --libdir=%{_libdir}/vapoursynth
+%meson
 %meson_build
 
 
