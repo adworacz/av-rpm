@@ -16,6 +16,9 @@ BuildRequires:  pkgconfig(vapoursynth)
 BuildRequires:  pkgconfig(OpenCL)
 Requires:       vapoursynth-libs
 
+# Only seems buildable on x86_64...
+ExclusiveArch: x86_64
+
 %description
 %{summary}
 
