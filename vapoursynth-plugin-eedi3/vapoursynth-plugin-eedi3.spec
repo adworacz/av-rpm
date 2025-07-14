@@ -7,7 +7,7 @@ Summary:        Renewed EEDI3 filter for VapourSynth (includes OpenCL version)
 
 License:        GPL-2.0
 URL:            https://github.com/HomeOfVapourSynthEvolution/VapourSynth-EEDI3
-Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-EEDI3/archive/%{commit}.zip
+Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-EEDI3/archive/%{commit}.tar.gz
 
 BuildRequires:  meson
 BuildRequires:  gcc-c++
