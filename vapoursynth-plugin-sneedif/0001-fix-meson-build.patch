@@ -1,0 +1,20 @@
+diff -ru vapoursynth-SNEEDIF-R3-orig/meson.build vapoursynth-SNEEDIF-R3/meson.build
+--- vapoursynth-SNEEDIF-R3-orig/meson.build	2025-06-26 07:38:38.000000000 -0700
++++ vapoursynth-SNEEDIF-R3/meson.build	2025-07-13 20:07:50.762728271 -0700
+@@ -29,7 +29,7 @@
+ 
+ vapoursynth_dep = dependency('vapoursynth').partial_dependency(compile_args : true, includes : true)
+ 
+-boost_dep = dependency('boost', modules : ['filesystem'], static : true)
++boost_dep = dependency('boost', modules : ['filesystem'])
+ 
+ opencl_dep = dependency('OpenCL', required : false)
+ if not opencl_dep.found()
+@@ -48,5 +48,7 @@
+ 
+ shared_module('sneedif', sources,
+   dependencies : deps,
++  install : true,
++  install_dir : join_paths(vapoursynth_dep.get_pkgconfig_variable('libdir'), 'vapoursynth'),
+   gnu_symbol_visibility : 'hidden'
+ )
