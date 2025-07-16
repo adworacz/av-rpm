@@ -28,7 +28,8 @@ ExclusiveArch: x86_64
 
 %build
 # I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
-%cmake -DCMAKE_CUDA_ARCHITECTURES='50 60 70 80 90 100 120'
+# Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
+%cmake -DCMAKE_CUDA_ARCHITECTURES=50;60;70;80;90;100;120
 %cmake_build
 
 %install
