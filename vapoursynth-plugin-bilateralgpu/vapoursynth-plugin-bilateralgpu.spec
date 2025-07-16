@@ -26,8 +26,8 @@ ExclusiveArch: x86_64
 %build
 # Set various CUDA env vars.
 # https://www.if-not-true-then-false.com/2018/install-nvidia-cuda-toolkit-on-fedora/#fedora-4140-1
-export PATH="/usr/local/cuda/bin $PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64 $LD_LIBRARY_PATH"
+export PATH="$PATH:/usr/local/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
 # I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
