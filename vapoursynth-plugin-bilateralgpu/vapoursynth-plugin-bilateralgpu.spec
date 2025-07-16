@@ -25,15 +25,9 @@ ExclusiveArch: x86_64
 %autosetup -n VapourSynth-BilateralGPU-%{commit}
 
 %build
-# Set various CUDA env vars.
-# https://www.if-not-true-then-false.com/2018/install-nvidia-cuda-toolkit-on-fedora/#fedora-4140-1
+# Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
-
-# Force compiling with PIE to prevent errors like:
-# main.cu.o: relocation R_X86_64_32 against `.bss' can not be used when making a PIE object; recompile with -fPIE
-# export CFLAGS="$CFLAGS -fPIE"
-# export CXXFLAGS="$CXXFLAGS -fPIE"
 
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-bilateralgpu-git#n39
