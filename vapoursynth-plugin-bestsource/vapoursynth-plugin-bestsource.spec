@@ -26,7 +26,7 @@ Requires:       vapoursynth-libs
 %summary
 
 %prep
-%autosetup -v -n bestsource-R%{version} -D -a 1
+%autosetup -n bestsource-R%{version} -D -a 1
 
 # Rename p2p directory to match bestsource meson.build's expectations.
 rm -rf libp2p && mv libp2p-%{libp2p_commit} libp2p
