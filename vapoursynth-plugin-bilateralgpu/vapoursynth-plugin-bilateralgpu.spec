@@ -12,6 +12,7 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archi
 # Requires nvidia cuda toolkit repo:
 # https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64
 # Ideally try and limit this to just the -devel libraries (cuda-libraries-devel, cuda-nvrtc-devel, cuda-driver-devel?)
+# ^Except that nvidia doesn't offer meta-packages for those, only per-version..versions.
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
@@ -34,15 +35,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 # export CFLAGS="$CFLAGS -fPIE"
 # export CXXFLAGS="$CXXFLAGS -fPIE"
 
-# I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-bilateralgpu-git#n39
-
-# Using an env var since using a commandline option doesn't seem to be working for some reason.
-# https://cmake.org/cmake/help/latest/envvar/CUDAFLAGS.html#envvar:CUDAFLAGS
-export CUDAFLAGS="--threads 0 --use_fast_math -pic"
-
-%cmake -DCMAKE_CUDA_ARCHITECTURES='50;60;70;80;90;100;120'
+%cmake -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' -DCMAKE_CUDA_ARCHITECTURES='50;60;70;80;90;100;120'
 %cmake_build
 
 %install
