@@ -19,6 +19,9 @@ Requires:       vapoursynth-libs
 # https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/issues/12
 Patch0: 0001-remove-no-format.patch
 Patch1: 0002-remove-static-linking.patch
+# armv7-a is not a valid option for newer versions of gcc-c++
+# so we use the next step up.
+Patch2: 0003-fix-arm-march.patch
 
 %description
 %{summary}

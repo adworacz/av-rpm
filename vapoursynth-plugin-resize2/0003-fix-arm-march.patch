@@ -1,0 +1,12 @@
+diff -ru vapoursynth-resize2-0.3.3-orig/subprojects/packagefiles/zimg/meson.build vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build
+--- vapoursynth-resize2-0.3.3-orig/subprojects/packagefiles/zimg/meson.build	2025-07-01 07:49:42.000000000 -0700
++++ vapoursynth-resize2-0.3.3/subprojects/packagefiles/zimg/meson.build	2025-07-16 10:43:29.095496969 -0700
+@@ -145,7 +145,7 @@
+         'src/zimg/resize/arm/resize_impl_arm.h'
+     ]
+ 
+-    NEON_CFLAGS = ['-march=armv7-a', '-mfpu=neon-vfpv4']
++    NEON_CFLAGS = ['-march=armv8-a', '-mfpu=neon-vfpv4']
+     if cxx.has_argument('-mfp16-format=ieee')
+         NEON_CFLAGS += ['-mfp16-format=ieee']
+     endif
