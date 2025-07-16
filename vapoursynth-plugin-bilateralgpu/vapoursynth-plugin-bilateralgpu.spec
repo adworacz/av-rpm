@@ -29,6 +29,11 @@ ExclusiveArch: x86_64
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
+# Force compiling with PIE to prevent errors like:
+# main.cu.o: relocation R_X86_64_32 against `.bss' can not be used when making a PIE object; recompile with -fPIE
+export CFLAGS="$CFLAGS -fPIE"
+export CXXFLAGS="$CXXFLAGS -fPIE"
+
 # I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-bilateralgpu-git#n39
