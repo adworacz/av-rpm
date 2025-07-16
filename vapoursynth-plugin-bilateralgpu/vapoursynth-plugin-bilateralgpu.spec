@@ -38,7 +38,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-bilateralgpu-git#n39
 #%cmake -DCMAKE_CUDA_ARCHITECTURES=50;60;70;80;90;100;120 -DUSE_NVRTC_STATIC=ON -DCMAKE_CUDA_FLAGS="--threads 0 --use_fast_math -Wno-deprecated-gpu-targets -pic"
-%cmake -DCMAKE_CUDA_ARCHITECTURES=50;60;70;80;90;100;120
+%cmake -DCMAKE_CUDA_ARCHITECTURES='50;60;70;80;90;100;120'
 %cmake_build
 
 %install
