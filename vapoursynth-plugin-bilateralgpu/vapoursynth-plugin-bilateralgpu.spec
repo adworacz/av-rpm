@@ -14,12 +14,14 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archi
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
+# Nvidia only offers CUDA repos for Fedora 41 so far.
+ExclusiveOS: fc41
+
 %description
 %summary
 
 %prep
 %autosetup -n VapourSynth-BilateralGPU-%{commit}
-
 
 %build
 %cmake
