@@ -24,9 +24,13 @@ ExclusiveArch: x86_64
 %autosetup -n VapourSynth-BilateralGPU-%{commit}
 
 %build
+# Set various CUDA env vars.
+source /etc/profile.d/cuda.sh
+
 # I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
 # Separated by semicolons per https://cmake.org/cmake/help/latest/envvar/CUDAARCHS.html#envvar:CUDAARCHS
-%cmake -DCMAKE_CUDA_ARCHITECTURES=50;60;70;80;90;100;120
+# https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-bilateralgpu-git#n39
+%cmake -DCMAKE_CUDA_ARCHITECTURES=50;60;70;80;90;100;120 -DUSE_NVRTC_STATIC=ON -DCMAKE_CUDA_FLAGS="--threads 0 --use_fast_math -Wno-deprecated-gpu-targets"
 %cmake_build
 
 %install
