@@ -47,7 +47,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %files
 %license LICENSE
 %doc README.md
-%{_libdir}/vapoursynth/bilateralgpu.so
+%{_libdir}/vapoursynth/libbilateralgpu.so
+%{_libdir}/vapoursynth/libbilateralgpu_rtc.so
 
 
 %changelog
