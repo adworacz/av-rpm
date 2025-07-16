@@ -11,8 +11,9 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archi
 
 # Requires nvidia cuda toolkit repo:
 # https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64
-# Ideally try and limit this to just the -devel libraries (cuda-libraries-devel, cuda-nvrtc-devel-cuda-driver-devel?)
-BuildRequires:  cmake gcc-c++ cuda-toolkit
+# Ideally try and limit this to just the -devel libraries (cuda-libraries-devel, cuda-nvrtc-devel, cuda-driver-devel?)
+#BuildRequires:  cmake gcc-c++ cuda-toolkit
+BuildRequires:  cmake gcc-c++ cuda-libraries-devel cuda-nvrtc-devel, cuda-driver-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 # Nvidia only offers CUDA repos for Fedora 41 so far.
@@ -26,7 +27,8 @@ ExclusiveArch: x86_64
 %autosetup -n VapourSynth-BilateralGPU-%{commit}
 
 %build
-%cmake
+# I think this can also be the compute capabilities, so 5.0+, as in 50, 60, 70...
+%cmake -DCMAKE_CUDA_ARCHITECTURES='50 60 70 80 90 100 120'
 %cmake_build
 
 %install
