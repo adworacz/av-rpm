@@ -59,3 +59,10 @@ Builds the given spec file (presuming sources have been downloaded).
 ## CUDA packages
 CUDA toolkit needs to be installed from Nvidia, apparently:
 https://rpmfusion.org/Howto/CUDA?hig%2E%2E%2E9#CUDA_Toolkit
+
+## Build CUDA packages locally
+We need to use `mock` directly, since `fedpkg` doesn't expose the `--addrepo` option unfortunately...
+
+So in the directory that contains the spec file in question:
+1. `fedpkg --release f41 srpm` to build the srpm file.
+2. `mock --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`

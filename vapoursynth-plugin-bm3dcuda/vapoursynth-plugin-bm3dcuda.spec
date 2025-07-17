@@ -9,7 +9,7 @@ License:        GPL-2.0
 URL:            https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/
 Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%{commit}.tar.gz
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit rocm-hip-devel
+BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch:  x86_64
@@ -24,14 +24,6 @@ Summary: CUDA-only (NVIDIA CUDA) BM3D denoising filter for VapourSynth.
 %description cuda
 %summary
 
-
-%package hip
-Summary: HIP-only (AMD ROCm HIP) BM3D denoising filter for VapourSynth.
-
-%description hip
-%summary
-
-
 %package cpu
 Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 
@@ -43,19 +35,11 @@ Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 %autosetup -n VapourSynth-BM3DCUDA-%{commit}
 
 
-# Have to break things into two builds, since the initial setup seems to bork
-# the Cmake settings required for HIP.
-# May need to use _vpath_builddir
-%define builddir_cuda %{_vpath_builddir}/cuda 
-%define builddir_hip %{_vpath_builddir}/hip
-
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
-#CUDA + CPU
-%define __cmake_builddir %builddir_cuda
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
@@ -67,25 +51,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
-#HIP
-%define __cmake_builddir %builddir_hip
-%cmake \
-        -DCMAKE_CXX_COMPILER=/usr/bin/hipcc \
-        -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
-        -DENABLE_CPU=OFF \
-        -DENABLE_CUDA=OFF \
-        -DENABLE_HIP=ON
-%cmake_build
-
 %install
-#CUDA + CPU
-%define __cmake_builddir %builddir_cuda
-%cmake_install
-
-#HIP
-%define __cmake_builddir %builddir_hip
 %cmake_install
 
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
@@ -97,9 +63,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %doc README.md
 %{_libdir}/vapoursynth/libbm3dcuda.so
 %{_libdir}/vapoursynth/libbm3dcuda_rtc.so
-
-%files hip
-%{_libdir}/vapoursynth/libbm3dhip.so
 
 %files cpu
 %{_libdir}/vapoursynth/libbm3dcpu.so
