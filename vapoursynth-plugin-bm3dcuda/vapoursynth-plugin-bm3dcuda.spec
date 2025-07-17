@@ -12,6 +12,8 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
+ExclusiveArch:  x86_64
+
 %description
 %summary
 
