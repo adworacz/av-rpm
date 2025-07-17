@@ -60,6 +60,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
+# Premature cmake install to get cuda libs where they should be?
+%cmake_install
+
 #HIP
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
