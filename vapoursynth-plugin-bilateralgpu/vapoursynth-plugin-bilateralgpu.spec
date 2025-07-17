@@ -31,8 +31,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
 %cmake \
         -DCMAKE_BUILD_TYPE=Release \
+        -DUSE_NVRTC_STATIC=ON \
         -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' \
-        -DCMAKE_CUDA_ARCHITECTURES='50;60;70;80;90;100;120' 
+        -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
 %install
