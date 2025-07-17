@@ -42,6 +42,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 # TODO: Support HIP
 %cmake \
         -DCMAKE_BUILD_TYPE=Release \
+        -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
         -DUSE_NVRTC_STATIC=ON \
         -DENABLE_CPU=ON \
         -DENABLE_CUDA=ON \
