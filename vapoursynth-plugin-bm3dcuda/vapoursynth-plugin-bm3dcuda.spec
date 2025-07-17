@@ -48,6 +48,7 @@ Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
+#CUDA
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
@@ -55,9 +56,18 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DUSE_NVRTC_STATIC=ON \
         -DENABLE_CPU=ON \
         -DENABLE_CUDA=ON \
-        -DENABLE_HIP=ON \
         -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' \
         -DCMAKE_CUDA_ARCHITECTURES=all-major
+%cmake_build
+
+#HIP
+%cmake \
+        -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
+        -DENABLE_CPU=OFF \
+        -DENABLE_CUDA=OFF \
+        -DENABLE_HIP=ON
 %cmake_build
 
 %install
