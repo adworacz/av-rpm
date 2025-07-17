@@ -43,17 +43,18 @@ Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 %autosetup -n VapourSynth-BM3DCUDA-%{commit}
 
 
+# Have to break things into two builds, since the initial setup seems to bork
+# the Cmake settings required for HIP.
+%define builddir_cuda %{__cmake_builddir}/cuda
+%define builddir_hip %{__cmake_builddir}/hip
+
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
-# TODO
-# A better option is likely to use a custom subbuild dir for each, and then 
-# reference that in the install section.
-# Use %{__cmake_build_dir} as a starting point.
-
-#CUDA
+#CUDA + CPU
+%define __cmake_builddir %builddir_cuda
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
@@ -65,17 +66,8 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
-# Have to break things into two builds, since the initial setup seems to bork
-# the Cmake settings required for HIP.
-
-# Premature cmake install to get cuda libs where they should be?
-# Can likely work around this by simply 'cp'-ing some things.
-%cmake_install
-
-# Wipe the slate clean for this new build.
-%cmake_build --target clean
-
 #HIP
+%define __cmake_builddir %builddir_hip
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
@@ -86,6 +78,12 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 %cmake_build
 
 %install
+#CUDA + CPU
+%define __cmake_builddir %builddir_cuda
+%cmake_install
+
+#HIP
+%define __cmake_builddir %builddir_hip
 %cmake_install
 
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
