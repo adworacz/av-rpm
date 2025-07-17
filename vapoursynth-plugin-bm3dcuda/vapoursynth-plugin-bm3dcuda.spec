@@ -45,8 +45,12 @@ Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 
 # Have to break things into two builds, since the initial setup seems to bork
 # the Cmake settings required for HIP.
-%define builddir_cuda %{__cmake_builddir}/cuda
+# May need to use _vpath_builddir
+%define builddir_cuda %{__cmake_builddir}/cuda 
 %define builddir_hip %{__cmake_builddir}/hip
+
+# Clear the old __cmake_builddir value to prevent recursion.
+%undefine __cmake_builddir
 
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
@@ -66,6 +70,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
+# Clear the old __cmake_builddir value to prevent recursion.
+%undefine __cmake_builddir
+
 #HIP
 %define __cmake_builddir %builddir_hip
 %cmake \
@@ -77,10 +84,16 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DENABLE_HIP=ON
 %cmake_build
 
+# Clear the old __cmake_builddir value to prevent recursion.
+%undefine __cmake_builddir
+
 %install
 #CUDA + CPU
 %define __cmake_builddir %builddir_cuda
 %cmake_install
+
+# Clear the old __cmake_builddir value to prevent recursion.
+%undefine __cmake_builddir
 
 #HIP
 %define __cmake_builddir %builddir_hip
