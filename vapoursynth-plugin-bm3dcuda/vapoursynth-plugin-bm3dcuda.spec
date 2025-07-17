@@ -60,8 +60,15 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
+# Have to break things into two builds, since the initial setup seems to bork
+# the Cmake settings required for HIP.
+
 # Premature cmake install to get cuda libs where they should be?
+# Can likely work around this by simply 'cp'-ing some things.
 %cmake_install
+
+# Wipe the slate clean for this new build.
+%cmake --target clean
 
 #HIP
 %cmake \
