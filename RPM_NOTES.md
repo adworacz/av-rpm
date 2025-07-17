@@ -65,4 +65,4 @@ We need to use `mock` directly, since `fedpkg` doesn't expose the `--addrepo` op
 
 So in the directory that contains the spec file in question:
 1. `fedpkg --release f41 srpm` to build the srpm file.
-2. `mock --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`
+2. `mock -r fedora-41-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`
