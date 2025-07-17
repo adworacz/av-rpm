@@ -48,6 +48,11 @@ Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
+# TODO
+# A better option is likely to use a custom subbuild dir for each, and then 
+# reference that in the install section.
+# Use %{__cmake_build_dir} as a starting point.
+
 #CUDA
 %cmake \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
@@ -68,7 +73,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 %cmake_install
 
 # Wipe the slate clean for this new build.
-%cmake --target clean
+%cmake_build --target clean
 
 #HIP
 %cmake \
