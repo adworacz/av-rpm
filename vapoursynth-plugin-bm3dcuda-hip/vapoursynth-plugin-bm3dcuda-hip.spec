@@ -20,6 +20,8 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%
 BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros
 BuildRequires:  pkgconfig(vapoursynth)
 
+ExclusiveArch: x86_64
+
 %description
 HIP-only (AMD ROCm HIP) BM3D denoising filter for VapourSynth.
 
