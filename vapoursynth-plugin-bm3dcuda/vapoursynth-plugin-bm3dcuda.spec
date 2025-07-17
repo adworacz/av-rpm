@@ -9,7 +9,7 @@ License:        GPL-2.0
 URL:            https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/
 Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%{commit}.tar.gz
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit rocm-hip-devel hipcc
+BuildRequires:  cmake gcc-c++ cuda-toolkit rocm-hip-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch:  x86_64
@@ -70,6 +70,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 #HIP
 %define __cmake_builddir %builddir_hip
 %cmake \
+        -DCMAKE_CXX_COMPILER=/usr/bin/hipcc \
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
         -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
