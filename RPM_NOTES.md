@@ -55,3 +55,7 @@ Builds the given spec file (presuming sources have been downloaded).
 * https://docs.fedoraproject.org/en-US/package-maintainers/Packaging_Tutorial_1_banner/
 * https://docs.fedoraproject.org/en-US/packaging-guidelines/Meson/
 * http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html
+
+## CUDA packages
+CUDA toolkit needs to be installed from Nvidia, apparently:
+https://rpmfusion.org/Howto/CUDA?hig%2E%2E%2E9#CUDA_Toolkit
