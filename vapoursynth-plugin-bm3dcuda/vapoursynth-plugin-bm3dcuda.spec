@@ -9,7 +9,7 @@ License:        GPL-2.0
 URL:            https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/
 Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%{commit}.tar.gz
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit rocm-hip-devel
+BuildRequires:  cmake gcc-c++ cuda-toolkit rocm-hip-devel hipcc
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch:  x86_64
