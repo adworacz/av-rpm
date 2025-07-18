@@ -1,7 +1,7 @@
-Name:           vapoursynth-plugin-bm3dcuda
+Name:           vapoursynth-plugin-bm3dcuda-cuda
 Version:        2.14^20250425g200250b
 Release:        %autorelease
-Summary:        BM3D denoising filter for VapourSynth, implemented in CUDA, AVX2, HIP and SYCL
+Summary:        BM3D denoising filter for VapourSynth, CUDA version.
 
 %define commit  200250b3864d50f0eb5f738686d06d9db3b1fbd3
 
@@ -17,20 +17,6 @@ ExclusiveArch:  x86_64
 %description
 %summary
 
-
-%package cuda
-Summary: CUDA-only (NVIDIA CUDA) BM3D denoising filter for VapourSynth.
-
-%description cuda
-%summary
-
-%package cpu
-Summary: CPU-only (x86_64 AVX2) BM3D denoising filter for VapourSynth.
-
-%description cpu
-%summary
-
-
 %prep
 %autosetup -n VapourSynth-BM3DCUDA-%{commit}
 
@@ -45,7 +31,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_BUILD_TYPE=Release \
         -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
         -DUSE_NVRTC_STATIC=ON \
-        -DENABLE_CPU=ON \
+        -DENABLE_CPU=OFF \
         -DENABLE_CUDA=ON \
         -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' \
         -DCMAKE_CUDA_ARCHITECTURES=all-major
@@ -57,16 +43,11 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
-%files cuda
-# TODO: Consider how to handle the license and doc files between subpackages
+%files
 %license LICENSE
 %doc README.md
 %{_libdir}/vapoursynth/libbm3dcuda.so
 %{_libdir}/vapoursynth/libbm3dcuda_rtc.so
-
-%files cpu
-%{_libdir}/vapoursynth/libbm3dcpu.so
-
 
 %changelog
 %autochangelog
