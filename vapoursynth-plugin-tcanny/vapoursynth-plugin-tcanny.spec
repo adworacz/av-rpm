@@ -3,7 +3,7 @@ Version:        14
 Release:        %autorelease
 Summary:        TCanny filter for VapourSynth
 
-License:        MIT
+License:        GPL-3.0
 URL:            https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TCanny
 Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TCanny/archive/refs/tags/r%{version}.tar.gz
 
