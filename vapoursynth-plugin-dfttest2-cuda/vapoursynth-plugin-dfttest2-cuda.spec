@@ -29,7 +29,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DENABLE_CPU=OFF \
         -DENABLE_GCC=OFF \
         -DENABLE_CUDA=ON \
-        -DENABLE_HIP=OFF
+        -DENABLE_HIP=OFF \
+        -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math' \
+        -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
 
 %install
