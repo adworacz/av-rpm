@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           vapoursynth-plugin-adaptivegrain
 Version:        0.3.2
 Release:        %autorelease
