@@ -1,0 +1,29 @@
+diff -ru vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3-orig/Makefile.am vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3/Makefile.am
+--- vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3-orig/Makefile.am	2024-07-14 22:53:22.000000000 -0700
++++ vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3/Makefile.am	2025-07-19 23:05:23.623496062 -0700
+@@ -47,7 +47,7 @@
+ # With just -mfpu=neon, clang says
+ #    /usr/include/clang/3.5.0/include/arm_neon.h:28:2: error: "NEON support not enabled"
+ # "-march=armv7-a" makes it shut up. Hopefully this parameter doesn't screw up anything.
+-libneon_la_CFLAGS = $(AM_CFLAGS) -mfpu=neon
++libneon_la_CFLAGS = $(AM_CFLAGS)
+ 
+ libnnedi3_la_LIBADD = libneon.la
+ endif
+diff -ru vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3-orig/src/cpufeatures.cpp vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3/src/cpufeatures.cpp
+--- vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3-orig/src/cpufeatures.cpp	2024-07-14 22:53:22.000000000 -0700
++++ vapoursynth-nnedi3-82993ff21cf569776fc1a7e5bb60235c00bbeea3/src/cpufeatures.cpp	2025-07-19 22:50:48.528510646 -0700
+@@ -84,12 +84,7 @@
+     cpuFeatures->can_run_vs = 1;
+ 
+ #if defined(NNEDI3_ARM)
+-    cpuFeatures->half_fp = !!(hwcap & HWCAP_ARM_HALF);
+-    cpuFeatures->edsp = !!(hwcap & HWCAP_ARM_EDSP);
+-    cpuFeatures->iwmmxt = !!(hwcap & HWCAP_ARM_IWMMXT);
+-    cpuFeatures->neon = !!(hwcap & HWCAP_ARM_NEON);
+-    cpuFeatures->fast_mult = !!(hwcap & HWCAP_ARM_FAST_MULT);
+-    cpuFeatures->idiv_a = !!(hwcap & HWCAP_ARM_IDIVA);
++    cpuFeatures->neon = !!(hwcap & HWCAP_ASIMD);
+ #elif defined(NNEDI3_PPC)
+     cpuFeatures->altivec = !!(hwcap & PPC_FEATURE_HAS_ALTIVEC);
+     cpuFeatures->spe = !!(hwcap & PPC_FEATURE_HAS_SPE);

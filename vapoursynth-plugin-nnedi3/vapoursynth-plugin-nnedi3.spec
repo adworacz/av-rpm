@@ -8,6 +8,7 @@ Summary:        NNEDI3 filter for VapourSynth
 License:        None
 URL:            https://github.com/dubhater/vapoursynth-nnedi3
 Source0:        https://github.com/dubhater/vapoursynth-nnedi3/archive/%{commit}.tar.gz
+Patch0:         0001-fix-aarch64.patch
 
 BuildRequires:  gcc-c++ autoconf automake libtool yasm
 BuildRequires:  pkgconfig(vapoursynth)
@@ -18,7 +19,7 @@ ExclusiveArch: x86_64
 %summary
 
 %prep
-%autosetup -n vapoursynth-nnedi3-%{commit}
+%autosetup -n vapoursynth-nnedi3-%{commit} -p1
 
 %build
 ./autogen.sh
