@@ -13,8 +13,6 @@ Patch0:         0001-fix-aarch64.patch
 BuildRequires:  gcc-c++ autoconf automake libtool yasm
 BuildRequires:  pkgconfig(vapoursynth)
 
-ExclusiveArch: x86_64
-
 %description
 %summary
 
