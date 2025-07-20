@@ -12,6 +12,8 @@ Source0:        https://github.com/dubhater/vapoursynth-nnedi3/archive/%{commit}
 BuildRequires:  gcc-c++ autoconf automake libtool yasm
 BuildRequires:  pkgconfig(vapoursynth)
 
+ExclusiveArch: x86_64
+
 %description
 %summary
 
