@@ -7,21 +7,17 @@ License:        GPL-3
 URL:            https://github.com/rust-av/Av1an
 Source0:        https://github.com/rust-av/Av1an/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  cargo
-BuildRequires:  rust
-BuildRequires:  clang
+BuildRequires:  cargo rust clang
 
 # Rav1e dep
 BuildRequires:  nasm
 
 # FFmpeg the third deps
-BuildRequires:  pkgconfig(libavutil)
-BuildRequires:  pkgconfig(libavcodec)
-BuildRequires:  pkgconfig(libavformat)
-BuildRequires:  pkgconfig(libavdevice)
-BuildRequires:  pkgconfig(libavfilter)
-BuildRequires:  pkgconfig(libswscale)
-BuildRequires:  pkgconfig(libswresample)
+BuildRequires: pkgconfig(libavutil) pkgconfig(libavcodec) pkgconfig(libavformat) pkgconfig(libavdevice)
+BuildRequires: pkgconfig(libavfilter) pkgconfig(libswscale) pkgconfig(libswresample)
+
+# Vapoursynth support
+BuildRequires: pkgconfig(vapoursynth)
 
 # TODO: Weak dependencies on encoders/vapoursynth?
 
@@ -43,6 +39,7 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 %files
 %license LICENSE.md
 %doc README.md
+%{_bindir}/%{name}
 
 
 
