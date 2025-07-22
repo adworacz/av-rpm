@@ -11,8 +11,10 @@ Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize
 
 BuildRequires:  meson
 BuildRequires:  gcc-c++
-BuildRequires:  git
 BuildRequires:  pkgconfig(vapoursynth)
+
+# Required to download submodules
+BuildRequires:  git 
 
 Requires:       vapoursynth-libs
 
