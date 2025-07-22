@@ -12,8 +12,6 @@ Source0:        https://github.com/WolframRhodium/VapourSynth-ILS/archive/%{comm
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
-ExclusiveArch: x86_64
-
 %description
 %summary
 
