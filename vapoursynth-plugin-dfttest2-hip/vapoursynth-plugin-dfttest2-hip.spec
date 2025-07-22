@@ -13,7 +13,7 @@ License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-dfttest2
 Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  cmake gcc-c++ git rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
+BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch: x86_64

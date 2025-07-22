@@ -10,7 +10,7 @@ URL:            https://github.com/AmusementClub/vs-dfttest2
 Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
 Source1:        https://github.com/vectorclass/version2/archive/%{vcl_commit}.tar.gz
 
-BuildRequires:  cmake gcc-c++ git
+BuildRequires:  cmake gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch: x86_64
