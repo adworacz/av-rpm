@@ -10,7 +10,7 @@ URL:            https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest
 Source0:        https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest/archive/%{commit}.tar.gz
 Patch0:         0001-fix-version.patch
 
-BuildRequires:  cmake gcc-c++ git
+BuildRequires:  cmake gcc-c++
 BuildRequires:  pkgconfig(vapoursynth) pkgconfig(tbb)
 
 %description
