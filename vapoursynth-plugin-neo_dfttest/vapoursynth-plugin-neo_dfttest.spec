@@ -13,6 +13,9 @@ Patch0:         0001-fix-version.patch
 BuildRequires:  cmake gcc-c++
 BuildRequires:  pkgconfig(vapoursynth) pkgconfig(tbb)
 
+# Builds with SSE/AVX instructions, so NEON doesn't work at this time.
+ExclusiveArch: x86_64
+
 %description
 %{summary}
 
