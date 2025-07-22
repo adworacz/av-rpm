@@ -10,8 +10,6 @@ Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
 
-ExclusiveArch: x86_64
-
 %description
 %summary
 
