@@ -1,0 +1,15 @@
+diff -ru neo_FFT3D-780dcdfb477c3e5195b1418b15a8b7eed89507ac-orig/CMakeLists.txt neo_FFT3D-780dcdfb477c3e5195b1418b15a8b7eed89507ac/CMakeLists.txt
+--- neo_FFT3D-780dcdfb477c3e5195b1418b15a8b7eed89507ac-orig/CMakeLists.txt	2025-05-24 15:03:04.000000000 -0700
++++ neo_FFT3D-780dcdfb477c3e5195b1418b15a8b7eed89507ac/CMakeLists.txt	2025-07-22 11:42:20.322578622 -0700
+@@ -8,10 +8,7 @@
+ set_property(TARGET neo-fft3d PROPERTY CXX_STANDARD 17)
+ option(ENABLE_PAR "Enable C++17 Parallel Execution" ON)
+ 
+-find_package(Git REQUIRED)
+-execute_process(COMMAND ${GIT_EXECUTABLE} describe --first-parent --tags --always OUTPUT_VARIABLE GIT_REPO_VERSION)
+-string(APPEND GIT_REPO_VERSION "r0")
+-string(REGEX REPLACE "(r[0-9]+).*" "\\1" VERSION ${GIT_REPO_VERSION})
++set(GIT_REPO_VERSION "r0")
+ 
+ configure_file (
+   "${PROJECT_SOURCE_DIR}/src/version.hpp.in"
