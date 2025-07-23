@@ -27,12 +27,11 @@ ExclusiveArch: x86_64
 # for intrinsic code to compile properly, otherwise we get
 # "selector must be an integer constant in the range [0, 7]" errors.
 #
-# Compiling with -O3 unrolls said loops properly, so it's a kind of workaround.
-# 
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=vapoursynth-plugin-smoothuv-git#n34
 # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=98927
 # https://stackoverflow.com/questions/12913451/mm-extract-epi8-intrinsic-that-takes-a-non-literal-integer-as-argument
-export CXXFLAGS="$CXXFLAGS -fpeel-loops"
+# Force the use of -O2, because EPEL9 uses -O0 (for some damn reason)
+export CXXFLAGS="$CXXFLAGS -O2 -fpeel-loops"
 
 %meson --libdir %{_libdir}/vapoursynth
 %meson_build
