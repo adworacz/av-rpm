@@ -10,6 +10,10 @@ Source0:        https://github.com/dubhater/vapoursynth-smoothuv/archive/refs/ta
 BuildRequires:  gcc-c++ meson
 BuildRequires:  pkgconfig(vapoursynth)
 
+# Project explicitly only supports x86_64
+# https://github.com/dubhater/vapoursynth-smoothuv/blob/master/meson.build#L26
+ExclusiveArch: x86_64
+
 #TODO: Add RainbowSmooth.py
 
 %description
