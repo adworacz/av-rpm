@@ -1,3 +1,8 @@
+# Disable debug packages for smoothuv, as 
+# EPEL9 fails to build them for some reason and we 
+# don't really need them anyway.
+%global debug_package %{nil}
+
 Name:           vapoursynth-plugin-smoothuv
 Version:        3
 Release:        %autorelease
