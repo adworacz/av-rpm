@@ -9,8 +9,7 @@ License:        None
 URL:            https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2
 Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  meson
-BuildRequires:  gcc-c++
+BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
 # Required to download submodules
