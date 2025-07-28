@@ -9,7 +9,7 @@ License:        MIT
 URL:            https://github.com/adworacz/zsmooth
 Source0:        https://github.com/adworacz/zsmooth/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  zig
+BuildRequires:  zig >= 0.14.0
 BuildRequires:  pkgconfig(vapoursynth)
 Requires:       vapoursynth-libs
 
