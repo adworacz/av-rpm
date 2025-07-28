@@ -11,6 +11,9 @@ Patch0:         0001-fix-cmake.patch
 BuildRequires:  cmake gcc-c++ cuda-toolkit tensorrt-devel libnvinfer-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
+# Apparently Nvidia doesn't provide tensorrt or nvinfer libraries for other arches.
+ExclusiveArch: x86_64
+
 %description
 %summary
 
