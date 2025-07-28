@@ -30,6 +30,24 @@ For example rust packages using cargo directly need network access.
 fedpkg --release 42 mockbuild --enable-network
 ```
 
+## Build cross-architecture
+Hint: Use `--root fedora-42-aarch64` as an example.
+
+```
+fedpkg --release 42 mockbuild --root fedora-42-aarch64
+```
+
+## CUDA packages
+CUDA toolkit needs to be installed from Nvidia, apparently:
+https://rpmfusion.org/Howto/CUDA?hig%2E%2E%2E9#CUDA_Toolkit
+
+## Build CUDA packages locally
+We need to use `mock` directly, since `fedpkg` doesn't expose the `--addrepo` option unfortunately...
+
+So in the directory that contains the spec file in question:
+1. `fedpkg --release f41 srpm` to build the srpm file.
+2. `mock -r fedora-41-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`
+
 # Setup - RPM compatible
 
 ```sh
@@ -56,13 +74,3 @@ Builds the given spec file (presuming sources have been downloaded).
 * https://docs.fedoraproject.org/en-US/packaging-guidelines/Meson/
 * http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html
 
-## CUDA packages
-CUDA toolkit needs to be installed from Nvidia, apparently:
-https://rpmfusion.org/Howto/CUDA?hig%2E%2E%2E9#CUDA_Toolkit
-
-## Build CUDA packages locally
-We need to use `mock` directly, since `fedpkg` doesn't expose the `--addrepo` option unfortunately...
-
-So in the directory that contains the spec file in question:
-1. `fedpkg --release f41 srpm` to build the srpm file.
-2. `mock -r fedora-41-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`
