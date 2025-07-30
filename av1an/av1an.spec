@@ -7,7 +7,7 @@ License:        GPL-3
 URL:            https://github.com/rust-av/Av1an
 Source0:        https://github.com/rust-av/Av1an/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  cargo rust clang
+BuildRequires:  cargo rust clang cargo-rpm-macros
 
 # Rav1e dep
 BuildRequires:  nasm
@@ -30,7 +30,7 @@ BuildRequires: pkgconfig(vapoursynth)
 
 
 %build
-cargo build --release --locked
+%{__cargo} build --release --locked
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
