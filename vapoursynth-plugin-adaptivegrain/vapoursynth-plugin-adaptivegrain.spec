@@ -9,7 +9,7 @@ License:        GPL-3
 URL:            https://github.com/kageru/adaptivegrain
 Source0:        https://github.com/kageru/adaptivegrain/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  cargo rust
+BuildRequires:  cargo rust cargo-rpm-macros
 Requires:       vapoursynth-libs
 
 %description
@@ -21,7 +21,7 @@ Requires:       vapoursynth-libs
 
 
 %build
-cargo build --release
+%{__cargo} build --release
 
 %install
 install -Dpm 0755 target/release/libadaptivegrain_rs.so %{buildroot}%{_libdir}/vapoursynth/libadaptivegrain_rs.so
