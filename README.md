@@ -2,10 +2,11 @@
 Welcome to AV RPM, my attempt at bringing a variety of unpackaged utilities to 
 various RPM-based distro's. 
 
-**COPR Repo:** https://copr.fedorainfracloud.org/coprs/flawlessmedia/av-rpm/
+* **COPR Repo:** https://copr.fedorainfracloud.org/coprs/flawlessmedia/av-rpm/
+* **Github**: https://github.com/adworacz/av-rpm
 
 ## Requests
-Feel free to open an issue for any common AV utility or VapourSynth plugin that
+Feel free to open a Github issue for any common AV utility or VapourSynth plugin that
 you'd like to see added.
 
 ## Supported OS
@@ -38,3 +39,7 @@ This means that CUDA plugins are only available on:
 NVIDIA only seems to support TensorRT libraries on EPEL releases.
 
 Since NVIDIA doesn't support CUDA on EPEL 10 (yet), only EPEL 9 provides TensorRT support.
+
+### Zig
+Due to Zig not being available in EPEL10 yet, builds for EPEL10 constantly fail and thus have 
+been disabled for the time being. Hopefully this changes with EPEL11.
