@@ -4,8 +4,8 @@ Release:        %autorelease
 Summary:        yadifmod filter for VapourSynth
 
 License:        GPL-2.0
-URL:            https://github.com/HomeOfVapourSynthEvolution/VapourSynth-yadifmod
-Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-yadifmod/archive/refs/tags/r%{version}.tar.gz
+URL:            https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifmod
+Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifmod/archive/refs/tags/r%{version}.tar.gz
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
