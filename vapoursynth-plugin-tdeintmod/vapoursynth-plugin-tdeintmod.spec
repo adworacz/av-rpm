@@ -10,6 +10,8 @@ Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TDeint
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
+ExclusiveArch:  x86_64
+
 %description
 %summary
 

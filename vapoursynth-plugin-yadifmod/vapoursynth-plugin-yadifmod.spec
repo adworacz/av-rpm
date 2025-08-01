@@ -10,6 +10,8 @@ Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Yadifm
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
+ExclusiveArch:  x86_64
+
 %description
 %summary
 
