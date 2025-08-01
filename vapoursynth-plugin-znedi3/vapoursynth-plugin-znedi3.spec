@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 %define commit  47e7698f481577ac325567bb553134520939f1ff
 %define vsxx_commit de38f0e128c85782494ae00565698a2b25e87869
 %define graphengine_commit f06d7cb4d589ea4657f01b13613efb7437c8ecda
