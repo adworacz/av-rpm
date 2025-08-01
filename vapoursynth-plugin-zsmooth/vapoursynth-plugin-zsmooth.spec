@@ -13,8 +13,6 @@ BuildRequires:  zig >= 0.14.0
 BuildRequires:  pkgconfig(vapoursynth)
 Requires:       vapoursynth-libs
 
-ExcludeOS: el10
-
 %description
 %{summary}
 
