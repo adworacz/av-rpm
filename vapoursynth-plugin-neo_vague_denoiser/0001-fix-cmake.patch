@@ -1,0 +1,14 @@
+diff -ru neo_Vague_Denoiser-5716b33ec4e50d92171d01a47da8dff173acca97-orig/CMakeLists.txt neo_Vague_Denoiser-5716b33ec4e50d92171d01a47da8dff173acca97/CMakeLists.txt
+--- neo_Vague_Denoiser-5716b33ec4e50d92171d01a47da8dff173acca97-orig/CMakeLists.txt	2023-12-14 15:05:19.000000000 -0800
++++ neo_Vague_Denoiser-5716b33ec4e50d92171d01a47da8dff173acca97/CMakeLists.txt	2025-08-01 11:24:13.958110062 -0700
+@@ -10,9 +10,7 @@
+ option(ENABLE_PAR "Enable C++17 Parallel Execution" ON)
+ add_compile_definitions(VS_TARGET_CPU_X86)
+ 
+-find_package(Git REQUIRED)
+-execute_process(COMMAND ${GIT_EXECUTABLE} describe --first-parent --tags --always OUTPUT_VARIABLE GIT_REPO_VERSION)
+-string(REGEX REPLACE "(r[0-9]+).*" "\\1" VERSION ${GIT_REPO_VERSION})
++set(VERSION "unknown")
+ 
+ configure_file (
+   "${PROJECT_SOURCE_DIR}/src/version.hpp.in"
