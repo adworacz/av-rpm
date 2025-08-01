@@ -13,6 +13,8 @@ Patch0:         0001-fix-cmake.patch
 BuildRequires:  cmake gcc-c++  
 BuildRequires:  pkgconfig(vapoursynth) pkgconfig(tbb)
 
+ExclusiveArch:  x86_64
+
 %description
 %{summary}
 
