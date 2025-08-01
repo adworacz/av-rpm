@@ -1,0 +1,53 @@
+diff -ru VapourSynth-EEDI2CUDA-Pre_01-orig/CMakeLists.txt VapourSynth-EEDI2CUDA-Pre_01/CMakeLists.txt
+--- VapourSynth-EEDI2CUDA-Pre_01-orig/CMakeLists.txt	2021-08-27 21:11:38.000000000 -0700
++++ VapourSynth-EEDI2CUDA-Pre_01/CMakeLists.txt	2025-07-31 17:51:05.040364508 -0700
+@@ -1,21 +1,9 @@
+ cmake_minimum_required(VERSION 3.20)
+ project(VapourSynth-EEDI2CUDA CUDA)
+ 
+-include(FetchContent)
+-FetchContent_Declare(VapourSynth
+-    URL             https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R55-API4-RC1.zip
+-    URL_HASH    MD5=96E8740B1B4E47A3BECF34CFC11CF539)
+-FetchContent_Declare(AviSynthPlus
+-    URL             https://github.com/AviSynth/AviSynthPlus/archive/refs/tags/v3.7.0.zip
+-    URL_HASH    MD5=45239C3AB7750730DAB672175B47D357)
+-FetchContent_GetProperties(VapourSynth)
+-if(NOT VapourSynth_POPULATED)
+-    FetchContent_Populate(VapourSynth)
+-endif()
+-FetchContent_GetProperties(AviSynthPlus)
+-if(NOT AviSynthPlus_POPULATED)
+-    FetchContent_Populate(AviSynthPlus)
+-endif()
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(VAPOURSYNTH vapoursynth)
++include_directories(${VAPOURSYNTH_INCLUDE_DIRS})
+ 
+ set(ENABLE_VAPOURSYNTH_API3_BINDING ON CACHE BOOL "Enable VapourSynth API3 binding")
+ set(ENABLE_VAPOURSYNTH_API4_BINDING ON CACHE BOOL "Enable VapourSynth API4 binding")
+@@ -40,8 +28,6 @@
+ 
+ target_include_directories(EEDI2CUDA PRIVATE
+     "${PROJECT_BINARY_DIR}"
+-    "${vapoursynth_SOURCE_DIR}/include"
+-    "${avisynthplus_SOURCE_DIR}/avs_core/include"
+     ${Boost_INCLUDE_DIRS}
+     ${CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
+ target_compile_options(EEDI2CUDA PRIVATE
+@@ -59,14 +45,8 @@
+ else()
+     target_compile_options(EEDI2CUDA PRIVATE "-Xcompiler=-Wno-terminate")
+ endif()
+-set_target_properties(EEDI2CUDA PROPERTIES CUDA_ARCHITECTURES "50-virtual")
+ 
+-find_package(Git REQUIRED)
+-execute_process(
+-    COMMAND ${GIT_EXECUTABLE} describe --tags --long
+-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+-    OUTPUT_VARIABLE VCS_TAG)
+-string(STRIP ${VCS_TAG} VCS_TAG)
++set(VCS_TAG "unknown")
+ get_property(BUILD_OPTIONS TARGET EEDI2CUDA PROPERTY COMPILE_OPTIONS)
+ string(TIMESTAMP CONFIGURE_TIME)
+ configure_file(config.h.in config.h)
