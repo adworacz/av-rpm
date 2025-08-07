@@ -7,7 +7,7 @@ License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-dfttest2
 Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit
+BuildRequires:  cmake gcc-c++ cuda-toolkit-12
 BuildRequires:  pkgconfig(vapoursynth)
 
 %description
