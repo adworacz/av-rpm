@@ -1,5 +1,5 @@
 Name:           vapoursynth-plugin-subtext
-Version:        R5^20240527g397b80d
+Version:        5^20240527g397b80d
 Release:        %autorelease
 Summary:        Subtext (subtitle) plugin for VapourSynth
 
