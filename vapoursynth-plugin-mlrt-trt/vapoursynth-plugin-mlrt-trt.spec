@@ -8,7 +8,7 @@ URL:            https://github.com/AmusementClub/vs-mlrt
 Source0:        https://github.com/AmusementClub/vs-mlrt/archive/refs/tags/v%{version}.tar.gz
 Patch0:         0001-fix-cmake.patch
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit tensorrt-devel libnvinfer-devel
+BuildRequires:  cmake gcc-c++ cuda-toolkit-12 tensorrt-devel libnvinfer-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 # Apparently Nvidia doesn't provide tensorrt or nvinfer libraries for other arches.
