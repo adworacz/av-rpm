@@ -1,14 +1,16 @@
+%define commit  363d4e93f34730e9ef7ad8c74fda7e8c58802289
+
 Name:           vapoursynth-plugin-mlrt-trt
-Version:        15.13
+Version:        15.13g20250806g363d4e9
 Release:        %autorelease
 Summary:        Efficient CPU/GPU ML Runtimes for VapourSynth (CUDA TensorRT)
 
 License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-mlrt
-Source0:        https://github.com/AmusementClub/vs-mlrt/archive/refs/tags/v%{version}.tar.gz
+Source0:        https://github.com/AmusementClub/vs-mlrt/archive/%{commit}.tar.gz
 Patch0:         0001-fix-cmake.patch
 
-BuildRequires:  cmake gcc-c++ cuda-toolkit-12 tensorrt-devel libnvinfer-devel
+BuildRequires:  cmake gcc-c++ cuda-toolkit tensorrt-devel libnvinfer-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 # Apparently Nvidia doesn't provide tensorrt or nvinfer libraries for other arches.
@@ -18,7 +20,7 @@ ExclusiveArch: x86_64
 %summary
 
 %prep
-%autosetup -n vs-mlrt-%{version} -p1
+%autosetup -n vs-mlrt-%{commit} -p1
 
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
