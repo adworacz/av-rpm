@@ -22,6 +22,10 @@ Conflicts:      vapoursynth-plugin-vship
 %autosetup -n Vship-%{version}
 
 %build
+# Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
+export PATH="$PATH:/usr/local/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+
 %make_build buildcudaall
 
 %install
