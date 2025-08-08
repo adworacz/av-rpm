@@ -9,7 +9,7 @@ License:        GPL-3.0
 URL:            https://github.com/Line-fr/Vship
 Source0:        https://github.com/Line-fr/Vship/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  gcc-c++ cuda-toolkit
+BuildRequires:  gcc-c++ cuda-toolkit-12
 BuildRequires:  pkgconfig(vapoursynth)
 
 Provides:       vapoursynth-plugin-vship
