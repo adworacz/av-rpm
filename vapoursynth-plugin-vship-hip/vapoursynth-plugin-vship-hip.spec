@@ -15,7 +15,7 @@ License:        GPL-3.0
 URL:            https://github.com/Line-fr/Vship
 Source0:        https://github.com/Line-fr/Vship/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
+BuildRequires:  gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
 Provides:       vapoursynth-plugin-vship
