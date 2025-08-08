@@ -27,18 +27,19 @@ Supported OS List, from most to least:
 4. EPEL 9
 
 ### CUDA
-NVIDIA often lags a bit behind more recent Fedora (and EPEL) releases.
+As of CUDA 13, Nvidia now supports the following operating systems.
 
-At this time, NVIDIA only officially supports Fedora 41 (and not 42), and EPEL 9 (and not EPEL 10).
-
-This means that CUDA plugins are only available on:
+1. Fedora 42
 1. Fedora 41
+2. EPEL 10
 2. EPEL 9
 
 ### TensorRT
 NVIDIA only seems to support TensorRT libraries on EPEL releases.
 
-Since NVIDIA doesn't support CUDA on EPEL 10 (yet), only EPEL 9 provides TensorRT support.
+At the time of this writing, Nvidia doesn't have TensorRT support for EPEL 10 yet.
+
+Hopefully this changes soon.
 
 ### Zig
 Due to Zig not being available in EPEL10 yet, builds for EPEL10 constantly fail and thus have 
