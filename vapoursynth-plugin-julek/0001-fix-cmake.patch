@@ -1,0 +1,33 @@
+diff -ru vapoursynth-julek-plugin-r3-orig/CMakeLists.txt vapoursynth-julek-plugin-r3/CMakeLists.txt
+--- vapoursynth-julek-plugin-r3-orig/CMakeLists.txt	2023-01-18 19:00:09.000000000 -0800
++++ vapoursynth-julek-plugin-r3/CMakeLists.txt	2025-08-08 12:15:08.086418118 -0700
+@@ -26,20 +26,11 @@
+ 	CXX_STANDARD_REQUIRED ON
+ )
+ 
+-find_library(libjxl NAMES
+-	jxl
+-	jxl-static
+-	PATHS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libjxl_build/install/lib
+-	NO_DEFAULT_PATH
+-)
++find_library(libjxl NAMES jxl jxl-static)
+ 
+ message(STATUS "julek: find_library returned ${libjxl}")
+ 
+-find_library(libhwy NAMES
+-	hwy
+-	PATHS ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libjxl_build/install/lib
+-	NO_DEFAULT_PATH
+-)
++find_library(libhwy NAMES hwy)
+ 
+ message(STATUS "julek: find_library returned ${libhwy}")
+ 
+@@ -122,4 +113,4 @@
+ 
+ configure_file(src/config.h.in config.h)
+ 
+-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+\ No newline at end of file
++include_directories(${CMAKE_CURRENT_BINARY_DIR})
