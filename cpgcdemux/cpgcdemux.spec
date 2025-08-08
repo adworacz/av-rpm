@@ -5,7 +5,8 @@ Summary:        Linux console port of PgcDemux. A tool for demuxing a DVD PGC/VI
 
 License:        LGPL-2.1
 URL:            http://cdslow.org.ru/en/cpgcdemux
-Source0:        http://cdslow.org.ru/files/cpgcdemux/%{name}-%{version}.tar.gz
+#Source0:        http://cdslow.org.ru/files/cpgcdemux/%{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++ cmake
 
