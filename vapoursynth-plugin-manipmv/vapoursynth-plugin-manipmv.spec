@@ -10,6 +10,7 @@ URL:            https://github.com/Mikewando/manipulate-motion-vectors
 Source0:        https://github.com/Mikewando/manipulate-motion-vectors/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires:  zig >= 0.14.0
+BuildRequires:  zig-rpm-macros
 BuildRequires:  pkgconfig(vapoursynth)
 
 %description
@@ -21,7 +22,7 @@ BuildRequires:  pkgconfig(vapoursynth)
 
 
 %build
-zig build -Doptimize=ReleaseFast -Dtarget=native -Dcpu=baseline --build-id=sha1 --summary all --verbose
+zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 
 %install
 %{__install} -pDm 755 zig-out/lib/libmanipmv.so %{buildroot}%{_libdir}/vapoursynth/libmanipmv.so
