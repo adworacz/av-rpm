@@ -10,6 +10,10 @@ Source0:        https://github.com/Mikewando/vsfpng/archive/refs/tags/%{version}
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
+# Seems to only build on x86_64
+# https://github.com/Mikewando/vsfpng/issues/3
+ExclusiveArch:  x86_64
+
 %description
 %{summary}
 
