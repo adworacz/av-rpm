@@ -10,6 +10,7 @@ URL:            https://github.com/dnjulek/vapoursynth-zip
 Source0:        https://github.com/dnjulek/vapoursynth-zip/archive/refs/tags/R%{version}.tar.gz
 
 BuildRequires:  zig >= 0.14.0
+BuildRequires:  zig-rpm-macros
 BuildRequires:  pkgconfig(vapoursynth)
 Requires:       vapoursynth-libs
 
@@ -22,10 +23,7 @@ Requires:       vapoursynth-libs
 
 
 %build
-# TODO: Create subpackages for different cpus
-# %zig_prep
-# %zig_build
-zig build -Doptimize=ReleaseFast -Dtarget=native -Dcpu=baseline --build-id=sha1 --summary all --verbose
+zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 
 %install
 %{__install} -pDm 755 zig-out/lib/libvszip.so %{buildroot}%{_libdir}/vapoursynth/libvszip.so
