@@ -6,17 +6,13 @@ Summary:        fpng for VapourSynth
 License:        LGPL-2.1
 URL:            https://github.com/Mikewando/vsfpng
 Source0:        https://github.com/Mikewando/vsfpng/archive/refs/tags/%{version}.tar.gz
+Patch0:         0001-fix-meson.patch
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
 
-# Seems to only build on x86_64
-# https://github.com/Mikewando/vsfpng/issues/3
-ExclusiveArch:  x86_64
-
 %description
 %{summary}
-
 
 %prep
 %autosetup -n vsfpng-%{version}
