@@ -25,7 +25,6 @@ BuildRequires:  pkgconfig(vapoursynth)
 %make_build
 
 %install
-ls
 %{__install} -pDm755 libcontinuityfixer.so %{buildroot}%{_libdir}/vapoursynth/libcontinuityfixer.so
 
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
