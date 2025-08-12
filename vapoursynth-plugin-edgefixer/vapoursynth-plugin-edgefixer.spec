@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 
 %define commit  562e06dcf21d2aed3fde54b97b9b19e4ca4e335d
 

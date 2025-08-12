@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           vapoursynth-plugin-continuityfixer
 Version:        7
 Release:        %autorelease
