@@ -1,4 +1,4 @@
-Name:           tsMuxer
+Name:           tsmuxer
 Version:        2.7.0
 Release:        %autorelease
 Summary:        tsMuxer is a transport stream muxer for remuxing/muxing elementary
@@ -18,7 +18,7 @@ Supported video codecs H.264/AVC, H.265/HEVC, VC-1, MPEG2. Supported
 audio codecs AAC, AC3 / E-AC3(DD+), DTS/ DTS-HD. 
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n tsMuxer-%{version}
 
 
 
