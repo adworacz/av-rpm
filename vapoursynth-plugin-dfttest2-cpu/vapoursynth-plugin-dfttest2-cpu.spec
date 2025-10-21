@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-dfttest2-cpu
-Version:        7
-Release:        %autorelease
+Version:        8
+Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (CPU + GCC versions)
 
 %define vcl_commit a0a33986fb1fe8a5b7844e8a1b1f197ce19af35d
@@ -46,4 +46,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_gcc.so
 
 %changelog
-%autochangelog
+* Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 8-1
+- Upgrade to v8
+
