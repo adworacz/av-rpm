@@ -5,15 +5,15 @@
 %global build_cxxflags %(echo %{optflags} | sed -e 's/-fstack-protector-strong/-Xarch_host -fstack-protector-strong/' -e 's/-fcf-protection/-Xarch_host -fcf-protection/')
 
 Name:           vapoursynth-plugin-dfttest2-hip
-Version:        7
-Release:        %autorelease
+Version:        8
+Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (HIP version)
 
 License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-dfttest2
 Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
+BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel rocminfo
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch: x86_64
@@ -46,4 +46,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_hiprtc.so
 
 %changelog
-%autochangelog
+* Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 8-1
+- Upgrade to v8
+
