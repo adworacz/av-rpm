@@ -18,7 +18,7 @@ URL:            https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/
 Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/refs/tags/R%{version}.tar.gz
 #Source0:        https://github.com/WolframRhodium/VapourSynth-BM3DCUDA/archive/%{commit}.tar.gz
 
-BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros
+BuildRequires:  cmake gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros rocminfo
 BuildRequires:  pkgconfig(vapoursynth)
 
 ExclusiveArch: x86_64
