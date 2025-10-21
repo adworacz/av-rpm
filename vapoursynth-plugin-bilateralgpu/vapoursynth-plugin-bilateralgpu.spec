@@ -1,13 +1,14 @@
 Name:           vapoursynth-plugin-bilateralgpu
-Version:        10^20231110ga2198f1
-Release:        %autorelease
+Version:        12
+Release:        1%{?dist}
 Summary:        Bilateral filter in CUDA and SYCL for VapourSynth. 
 
-%define commit  a2198f12f998f582eb703e62385f7dac3389c4eb
+#%%define commit  a2198f12f998f582eb703e62385f7dac3389c4eb
 
 License:        MIT
 URL:            https://github.com/WolframRhodium/VapourSynth-BilateralGPU
-Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archive/%{commit}.tar.gz
+Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archive/refs/tags/r%{version}.tar.gz
+# Source0:        https://github.com/WolframRhodium/VapourSynth-BilateralGPU/archive/%{commit}.tar.gz
 
 # Requires nvidia cuda toolkit repo:
 # https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64
@@ -20,7 +21,8 @@ BuildRequires:  pkgconfig(vapoursynth)
 %summary
 
 %prep
-%autosetup -n VapourSynth-BilateralGPU-%{commit}
+%autosetup -n VapourSynth-BilateralGPU-r%{version}
+#%%autosetup -n VapourSynth-BilateralGPU-%{commit}
 
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
@@ -47,4 +49,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-%autochangelog
+* Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 12-1
+- Upgrade to v12
+
