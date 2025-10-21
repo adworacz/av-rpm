@@ -1,14 +1,14 @@
-%define commit  3fe2c1a68460022d9196ddb2a8200baedaba67c1
+#%%define commit  3fe2c1a68460022d9196ddb2a8200baedaba67c1
 
 Name:           vapoursynth-plugin-dfttest2-cuda
-Version:        7^20250808g3fe2c1a
-Release:        %autorelease
+Version:        8
+Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (CUDA version)
 
 License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-dfttest2
-#Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
-Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/%{commit}.tar.gz
+Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/refs/tags/v%{version}.tar.gz
+# Source0:        https://github.com/AmusementClub/vs-dfttest2/archive/%{commit}.tar.gz
 
 BuildRequires:  cmake gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
@@ -17,7 +17,8 @@ BuildRequires:  pkgconfig(vapoursynth)
 %summary
 
 %prep
-%autosetup -n vs-dfttest2-%{commit}
+#%%autosetup -n vs-dfttest2-%{commit}
+%autosetup -n vs-dfttest2-%{version}
 
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
@@ -48,4 +49,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_nvrtc.so
 
 %changelog
-%autochangelog
+* Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 8-1
+- Upgrade to v8
+
