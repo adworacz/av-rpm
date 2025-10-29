@@ -45,9 +45,8 @@ https://rpmfusion.org/Howto/CUDA?hig%2E%2E%2E9#CUDA_Toolkit
 We need to use `mock` directly, since `fedpkg` doesn't expose the `--addrepo` option unfortunately...
 
 So in the directory that contains the spec file in question:
-1. `fedpkg --release f41 srpm` to build the srpm file.
-2. Fedora: `mock -r fedora-41-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora41/x86_64 --resultdir result_foobar foobar.src.rpm`
-3. EPEL: `mock -r rocky+epel-9-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64 --resultdir result_foobar foobar.src.rpm`
+2. Fedora: `fedpkg --release f42 srpm && mock -r fedora-42-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora42/x86_64 --resultdir result_foobar foobar.src.rpm`
+3. EPEL: `fedpkg --release epel10 srpm && mock -r rocky+epel-10-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/rhel10/x86_64 --resultdir result_foobar foobar.src.rpm`
 
 # Setup - RPM compatible
 
