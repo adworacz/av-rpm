@@ -21,18 +21,19 @@ if the x86_64 version succeeds) or b) older OS' not having recent enough version
 In the latter case, nothing can be done, as we don't control what Redhat puts in Fedora/EPEL.
 
 Supported OS List, from most to least:
+1. Fedora 43
 1. Fedora 42
-2. Fedora 41
-3. EPEL 10
-4. EPEL 9
+1. Fedora 41
+1. EPEL 10
+1. EPEL 9
 
 ### CUDA
 As of CUDA 13, Nvidia now supports the following operating systems.
 
 1. Fedora 42
 1. Fedora 41
-2. EPEL 10
-2. EPEL 9
+1. EPEL 10
+1. EPEL 9
 
 ### TensorRT
 NVIDIA only seems to support TensorRT libraries on EPEL releases.
