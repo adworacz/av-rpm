@@ -4,7 +4,7 @@
 %define dtl_commit b83e617aab99ae85e5be4e3b2074a5ca873fbb8b
 
 Name:       nvenc
-Version:    9.05
+Version:    9.06
 Release:    1%{?dist}
 Summary:    Hardware encoder for Nvidia
 
@@ -67,6 +67,9 @@ rm -rf dtl && mv dtl-%{dtl_commit} dtl
 
 
 %changelog
+* Fri Oct 31 2025 adworacz <561689+adworacz@users.noreply.github.com> - 9.06-1
+- Update to 9.06
+
 * Wed Oct 22 2025 adworacz <561689+adworacz@users.noreply.github.com> - 9.05-1
 - Version 9.05
 
