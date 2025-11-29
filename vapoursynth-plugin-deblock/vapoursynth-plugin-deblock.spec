@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-deblock
-Version:        6.1
-Release:        %autorelease
+Version:        7.1
+Release:        1%{?dist}
 Summary:        Deblock filter for VapourSynth
 
 License:        GPL-2.0
@@ -32,4 +32,5 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdeblock.so
 
 %changelog
-%autochangelog
+* Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 7.1-1
+- Update to 7.1
