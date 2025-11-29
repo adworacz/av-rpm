@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-eedi3
-Version:        4^20190929gd11bdb3
-Release:        %autorelease
+Version:        7
+Release:        1%{?dist}
 Summary:        Renewed EEDI3 filter for VapourSynth (includes OpenCL version)
 
 %define commit  d11bdb37c7a7118cd095b53d9f8fbbac02a06ac0
@@ -44,4 +44,7 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libeedi3m.so
 
 %changelog
+* Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 7-1
+- Update to 7
+
 %autochangelog
