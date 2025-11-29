@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-nlm-cuda
-Version:        1
-Release:        %autorelease
+Version:        3
+Release:        1%{?dist}
 Summary:        Non-local means denoise filter in CUDA, drop-in replacement of the KNLMeansCL for VapourSynth
 
 License:        GPL-3.0
@@ -39,4 +39,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvsnlm_cuda.so
 
 %changelog
-%autochangelog
+* Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 3-1
+- Upgrade to v3
+
