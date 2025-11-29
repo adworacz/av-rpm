@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-bestsource
-Version:        13
-Release:        %autorelease
+Version:        15
+Release:        1%{?dist}
 
 %define libp2p_commit 1e3818bd7277165819f659d410873fe5dab37af6 
 
@@ -55,4 +55,5 @@ find %{buildroot} -name '*.pc' -exec rm -f {} ';'
 
 
 %changelog
-%autochangelog
+* Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 15-1
+- Update to R15
