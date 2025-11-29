@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-vsfgraincuda
-Version:        1
-Release:        %autorelease
+Version:        2
+Release:        1%{?dist}
 Summary:        Realistic Film Grain Rendering for VapourSynth, implemented in CUDA 
 
 License:        GPL-3.0
@@ -39,4 +39,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-%autochangelog
+* Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 2-1
+- Upgrade to v2
+
