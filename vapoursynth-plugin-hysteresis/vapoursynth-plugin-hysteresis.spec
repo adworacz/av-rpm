@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-hysteresis
-Version:        1.0.5
-Release:        %autorelease
+Version:        1.0.6
+Release:        1%{?dist}
 Summary:        Hysteresis filter for VapourSynth
 
 License:        MIT
@@ -35,4 +35,6 @@ install -Dpm 0755 target/release/libhysteresis.so %{buildroot}%{_libdir}/vapours
 
 
 %changelog
-%autochangelog
+* Tue Dec 02 2025 adworacz <561689+adworacz@users.noreply.github.com> - 1.0.6-1
+- Upgrade to 1.0.6
+
