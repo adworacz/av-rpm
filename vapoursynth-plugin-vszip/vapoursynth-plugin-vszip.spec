@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-vszip
-Version:        7
-Release:        %autorelease
+Version:        9
+Release:        1%{?dist}
 Summary:        VapourSynth Zig Image Process
 
 License:        MIT
@@ -35,4 +35,6 @@ zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 %{_libdir}/vapoursynth/libvszip.so
 
 %changelog
-%autochangelog
+* Tue Dec 02 2025 adworacz <561689+adworacz@users.noreply.github.com> - 9-1
+- Upgrade to R9
+
