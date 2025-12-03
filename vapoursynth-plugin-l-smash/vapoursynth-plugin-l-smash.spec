@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-l-smash
-Version:        1253.0.0.0
-Release:        %autorelease
+Version:        1262.0.0.0
+Release:        1%{?dist}
 Summary:        A source plugin for AviSynth and VapourSynth
 
 License:        LGPL
@@ -51,4 +51,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-%autochangelog
+* Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 1262.0.0.0-1
+- Upgrade to 1262
+
+* Wed Jun 25 2025 adworacz <561689+adworacz@users.noreply.github.com>
+- Initial commit.
