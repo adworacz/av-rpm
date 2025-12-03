@@ -1,5 +1,5 @@
 Name:           vapoursynth-plugin-l-smash
-Version:        1262.0.0.0
+Version:        1266.0.0.0
 Release:        1%{?dist}
 Summary:        A source plugin for AviSynth and VapourSynth
 
@@ -51,6 +51,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 1266.0.0.0-1
+- Upgrade to 1266
+
 * Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 1262.0.0.0-1
 - Upgrade to 1262
 
