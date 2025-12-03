@@ -1,9 +1,9 @@
-Name:           obuparse
-Version:        0^20250608g8acb519
-Release:        %autorelease
-Summary:        A simple and portable single file AV1 OBU parser written in mostly C89 with a tiny bit of C99, with a permissive license.
+%define commit 665c8fbd8e078868c3509f17a53b2970fad83520
 
-%define commit 8acb5193a64e5c8281c9f22805f75f044f5931f7
+Name:           obuparse
+Version:        0^20250828g665c8fb
+Release:        1%{?dist}
+Summary:        A simple and portable single file AV1 OBU parser written in mostly C89 with a tiny bit of C99, with a permissive license.
 
 License:        ISC
 URL:            https://github.com/dwbuiten/obuparse
@@ -49,15 +49,14 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %files
 %license LICENSE
 %doc README.md
-%{_libdir}/libobuparse.so
-%{_libdir}/libobuparse.so.1
+%{_libdir}/libobuparse.so*
 
 %files devel
 %doc README.md
 %{_includedir}/obuparse.h
-%{_libdir}/libobuparse.so
-%{_libdir}/libobuparse.so.1
+%{_libdir}/libobuparse.so*
 
 
 %changelog
-%autochangelog
+* Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 0^20250828g665c8fb-1
+- Upgrade to 20250828 commit.

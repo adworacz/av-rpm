@@ -7,12 +7,12 @@
 -	@install -d $(PREFIX)/lib
 +	@install -d $(PREFIX)/lib64
  ifneq ($(SYSTEM),MINGW)
--	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib/libobuparse$(LIBSUF).1
+-	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib/libobuparse$(LIBSUF).2
 -	@rm -fv $(PREFIX)/lib/libobuparse$(LIBSUF)
--	@ln -sv libobuparse$(LIBSUF).1 $(PREFIX)/lib/libobuparse$(LIBSUF)
-+	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib64/libobuparse$(LIBSUF).1
+-	@ln -sv libobuparse$(LIBSUF).2 $(PREFIX)/lib/libobuparse$(LIBSUF)
++	@install -v libobuparse$(LIBSUF) $(PREFIX)/lib64/libobuparse$(LIBSUF).2
 +	@rm -fv $(PREFIX)/lib64/libobuparse$(LIBSUF)
-+	@ln -sv libobuparse$(LIBSUF).1 $(PREFIX)/lib64/libobuparse$(LIBSUF)
++	@ln -sv libobuparse$(LIBSUF).2 $(PREFIX)/lib64/libobuparse$(LIBSUF)
  else
  	@install -d $(PREFIX)/bin
  	@install -v libobuparse$(LIBSUF) $(PREFIX)/bin/libobuparse$(LIBSUF)
