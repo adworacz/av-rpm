@@ -1,6 +1,6 @@
 Name:           l-smash
 Version:        2.18.0^20241028g30270d0
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        Vimeo L-SMASH
 
 %define commit 30270d0d8b551b36b6f46c43bd3ffe997f13e157
@@ -59,4 +59,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
-%autochangelog
+* Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 2.18.0^20241028g30270d0-2
+- Bump to rebuild
+
