@@ -1,13 +1,14 @@
-%define commit  363d4e93f34730e9ef7ad8c74fda7e8c58802289
+#%%define commit  363d4e93f34730e9ef7ad8c74fda7e8c58802289
 
 Name:           vapoursynth-plugin-mlrt-trt
-Version:        15.13g20250806g363d4e9
-Release:        %autorelease
+Version:        15.14
+Release:        1%{?dist}
 Summary:        Efficient CPU/GPU ML Runtimes for VapourSynth (CUDA TensorRT)
 
 License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-mlrt
-Source0:        https://github.com/AmusementClub/vs-mlrt/archive/%{commit}.tar.gz
+Source0:        https://github.com/AmusementClub/vs-mlrt/archive/refs/tags/v%{version}.tar.gz
+#Source0:        https://github.com/AmusementClub/vs-mlrt/archive/%{commit}.tar.gz
 Patch0:         0001-fix-cmake.patch
 
 BuildRequires:  cmake gcc-c++ cuda-toolkit tensorrt-devel libnvinfer-devel
@@ -20,7 +21,8 @@ ExclusiveArch: x86_64
 %summary
 
 %prep
-%autosetup -n vs-mlrt-%{commit} -p1
+%autosetup -n vs-mlrt-v%{version} -p1
+#%%autosetup -n vs-mlrt-%{commit} -p1
 
 %build
 # Set various CUDA env vars so that nvcc (compiler) and cuda libs can be found.
@@ -49,4 +51,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvstrt.so
 
 %changelog
-%autochangelog
+* Thu Dec 04 2025 adworacz <561689+adworacz@users.noreply.github.com> - 15.14-1
+- Update to 15.14
+
