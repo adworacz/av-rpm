@@ -2,7 +2,7 @@
 
 Name:           ffvship
 Version:        4.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Standalone CLI for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
 License:        GPL-3.0
@@ -18,8 +18,6 @@ Requires: libvship
 Provides:       ffvship ffvship-hip = %{version}-%{release} ffvship-cuda = %{version}-%{release}
 Conflicts:      ffvship
 Obsoletes:      ffvship-hip < 4.0.1-2%{?dist} ffvship-cuda < 4.0.1-2%{?dist}
-
-ExclusiveArch: x86_64
 
 %description
 %summary
@@ -46,6 +44,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_bindir}/*
 
 %changelog
+* Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-2
+- Remove build limitation on x86_64, as CUDA version supports ARM
+
 * Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-1
 - Update to 4.0.1
 
