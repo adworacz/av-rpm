@@ -2,7 +2,7 @@
 
 Name:           ffvship
 Version:        4.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Standalone CLI for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
 License:        GPL-3.0
@@ -18,6 +18,10 @@ Requires: libvship
 Provides:       ffvship ffvship-hip = %{version}-%{release} ffvship-cuda = %{version}-%{release}
 Conflicts:      ffvship
 Obsoletes:      ffvship-hip < 4.0.1-2%{?dist} ffvship-cuda < 4.0.1-2%{?dist}
+
+# Only CUDA builds on aarch64, but CUDA only provides aarch64 repos for EPEL,
+# and EPEL doesn't provide ffms2 (which this pacakge requires).
+ExclusiveArch: x86_64
 
 %description
 %summary
@@ -44,6 +48,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_bindir}/*
 
 %changelog
+* Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-3
+- Readd x86_64 limitation.
+
 * Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-2
 - Remove build limitation on x86_64, as CUDA version supports ARM
 
