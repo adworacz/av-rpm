@@ -18,7 +18,7 @@ URL:            https://github.com/Line-fr/Vship
 Source0:        https://github.com/Line-fr/Vship/archive/refs/tags/v%{version}.tar.gz
 # Source0:        https://github.com/Line-fr/Vship/archive/%{commit}.tar.gz
 
-BuildRequires:  gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
+BuildRequires:  gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel libvship
 BuildRequires:  pkgconfig(ffms2) pkgconfig(zimg)
 
 Requires: libvship
