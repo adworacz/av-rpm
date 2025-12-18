@@ -2,7 +2,7 @@
 
 Name:           ffvship
 Version:        4.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Standalone CLI for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
 License:        GPL-3.0
@@ -10,7 +10,7 @@ URL:            https://github.com/Line-fr/Vship
 Source0:        https://github.com/Line-fr/Vship/archive/refs/tags/v%{version}.tar.gz
 # Source0:        https://github.com/Line-fr/Vship/archive/%{commit}.tar.gz
 
-BuildRequires:  gcc-c++ libvship
+BuildRequires:  clang libvship
 BuildRequires:  pkgconfig(ffms2) pkgconfig(zimg)
 
 Requires: libvship
@@ -48,6 +48,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_bindir}/*
 
 %changelog
+* Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-2
+- Update to use clang per upstream changes.
+
 * Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-1
 - Update to 4.0.2
 
