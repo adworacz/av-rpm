@@ -3,7 +3,7 @@
 %define commit  b25561316887c2b0bbc8b364dda6c07fee2cc85a
 
 Name:           vapoursynth-plugin-vship-cuda
-Version:        4.0.1
+Version:        4.0.2
 Release:        1%{?dist}
 Summary:        (CUDA version) VapourSynth plugin for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
@@ -48,6 +48,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvship.so
 
 %changelog
+* Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-1
+- Update to 4.0.2
+
 * Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-1
 - Update to 4.0.1
 

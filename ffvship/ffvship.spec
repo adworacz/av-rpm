@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           ffvship
-Version:        4.0.1
-Release:        3%{?dist}
+Version:        4.0.2
+Release:        1%{?dist}
 Summary:        Standalone CLI for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
 License:        GPL-3.0
@@ -48,6 +48,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_bindir}/*
 
 %changelog
+* Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-1
+- Update to 4.0.2
+
 * Fri Dec 05 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.1-3
 - Readd x86_64 limitation.
 
