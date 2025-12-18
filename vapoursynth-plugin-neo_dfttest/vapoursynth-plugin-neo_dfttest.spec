@@ -1,13 +1,14 @@
-%define commit  ec0d9473fc6652a22068966ddfef097253dd0256
+#%%define commit  ec0d9473fc6652a22068966ddfef097253dd0256
 
 Name:           vapoursynth-plugin-neo_dfttest
-Version:        9^20251203gec0d947
+Version:        11
 Release:        1%{?dist}
 Summary:        A 2D/3D frequency domain denoiser for VapourSynth
 
 License:        GPL-2.0
 URL:            https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest
-Source0:        https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest/archive/%{commit}.tar.gz
+Source0:        https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest/archive/refs/tags/r%{version}.tar.gz
+#Source0:        https://github.com/HomeOfAviSynthPlusEvolution/neo_dfttest/archive/%{commit}.tar.gz
 Patch0:         0001-fix-version.patch
 
 BuildRequires:  cmake gcc-c++
@@ -20,7 +21,8 @@ ExclusiveArch: x86_64
 %{summary}
 
 %prep
-%autosetup -n neo_DFTTest-%{commit} -p1
+%autosetup -n neo_DFTTest-r%{version} -p1
+#%%autosetup -n neo_DFTTest-%{commit} -p1
 
 
 %build
@@ -42,6 +44,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 11-1
+- Update to r11
+
 * Thu Dec 04 2025 adworacz <561689+adworacz@users.noreply.github.com> - 9^20251203gec0d947-1
 - Update to r9, commit ec0d947
 
