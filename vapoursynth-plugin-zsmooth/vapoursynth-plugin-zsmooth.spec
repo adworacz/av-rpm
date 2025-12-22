@@ -1,15 +1,15 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-zsmooth
-Version:        0.12
-Release:        %autorelease
+Version:        0.13
+Release:        1%{?dist}
 Summary:        Cross-platform, cross-architecture video smoothing functions for Vapoursynth, written in Zig
 
 License:        MIT
 URL:            https://github.com/adworacz/zsmooth
 Source0:        https://github.com/adworacz/zsmooth/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  zig >= 0.14.0
+BuildRequires:  zig >= 0.15.2
 BuildRequires:  zig-rpm-macros
 BuildRequires:  pkgconfig(vapoursynth)
 Requires:       vapoursynth-libs
@@ -35,4 +35,6 @@ zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 %{_libdir}/vapoursynth/libzsmooth.so
 
 %changelog
-%autochangelog
+* Mon Dec 22 2025 adworacz <561689+adworacz@users.noreply.github.com> - 0.13-1
+- Upgrade to 0.13
+
