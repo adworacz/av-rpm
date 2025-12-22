@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-dfttest
 Version:        7
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        DFTTest filter for VapourSynth
 
 License:        GPL-2.0
@@ -9,6 +9,8 @@ Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-DFTTes
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth) pkgconfig(fftw3f)
+
+Requires: pkgconfig(fftw3f)
 
 %description
 %summary
@@ -32,4 +34,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest.so
 
 %changelog
-%autochangelog
+* Mon Dec 22 2025 adworacz <561689+adworacz@users.noreply.github.com> - 7-2
+- Add direct dependency on fftw3
+
