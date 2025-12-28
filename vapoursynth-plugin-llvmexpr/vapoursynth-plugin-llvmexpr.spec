@@ -5,7 +5,7 @@
 %define     commit  badbc42e58327cd9f2a41c6a88431d02abcc4ffd
 
 Name:       vapoursynth-plugin-llvmexpr
-Version:    4.2
+Version:    4.3
 Release:    1%{?dist}
 Summary:    Fast, enhanced and Turing complete Vapoursynth Expr base on LLVM JIT 
 
@@ -42,6 +42,9 @@ meson subprojects download
 
 
 %changelog
+* Sun Dec 28 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.3-1
+- Update to 4.3
+
 * Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.2-1
 - Upgrade to 4.2
 
