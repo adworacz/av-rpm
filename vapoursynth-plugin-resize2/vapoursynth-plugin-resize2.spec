@@ -1,16 +1,16 @@
 %global debug_package %{nil}
 
-%define commit  15f1a6d2364f536d75cdc2c3c1798c75f807defd
+#%%define commit  15f1a6d2364f536d75cdc2c3c1798c75f807defd
 
 Name:           vapoursynth-plugin-resize2
-Version:        0.3.3^20250812g15f1a6d
-Release:        %autorelease
+Version:        0.3.4
+Release:        1%{?dist}
 Summary:        vapoursynth resize2
 
 License:        None
 URL:            https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2
-#Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/refs/tags/%{version}.tar.gz
-Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/%{commit}.tar.gz
+Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/refs/tags/%{version}.tar.gz
+# Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/%{commit}.tar.gz
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
@@ -22,7 +22,8 @@ BuildRequires:  git
 %{summary}
 
 %prep
-%autosetup -n vapoursynth-resize2-%{commit}
+%autosetup -n vapoursynth-resize2-%{version}
+# %%autosetup -n vapoursynth-resize2-%{commit}
 
 meson subprojects download
 
@@ -40,4 +41,6 @@ meson subprojects download
 %{_libdir}/vapoursynth/libresize2.so
 
 %changelog
-%autochangelog
+* Sun Dec 28 2025 adworacz <561689+adworacz@users.noreply.github.com> - 0.3.4-1
+- Update to 0.3.4
+
