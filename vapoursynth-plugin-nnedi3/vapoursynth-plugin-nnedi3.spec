@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-nnedi3
 Version:        12^20240714g82993ff
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        NNEDI3 filter for VapourSynth
 
 %define commit  82993ff21cf569776fc1a7e5bb60235c00bbeea3
@@ -12,6 +12,8 @@ Patch0:         0001-fix-aarch64.patch
 
 BuildRequires:  gcc-c++ autoconf automake libtool yasm
 BuildRequires:  pkgconfig(vapoursynth)
+
+Requires:   vapoursynth-plugin-nnedi3-weights
 
 %description
 %summary
@@ -33,7 +35,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %files
 %doc readme.rst
 %{_libdir}/vapoursynth/libnnedi3.so
-%{_datadir}/nnedi3/nnedi3_weights.bin
 
 %changelog
-%autochangelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 12^20240714g82993ff-2
+- Depend on separate weights package to prevent collisions
+

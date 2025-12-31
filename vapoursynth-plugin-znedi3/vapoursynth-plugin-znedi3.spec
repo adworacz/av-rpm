@@ -6,7 +6,7 @@
 
 Name:           vapoursynth-plugin-znedi3
 Version:        2.1^20250517g47e7698
-Release:        %autorelease
+Release:        2%{?dist}
 
 Summary:        nnedi3 filter for vapoursynth
 
@@ -18,6 +18,8 @@ Source2:        https://github.com/sekrit-twc/graphengine/archive/%{graphengine_
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
+
+Requires:   vapoursynth-plugin-nnedi3-weights
 
 %description
 %summary
@@ -34,9 +36,7 @@ rm -rf graphengine && mv graphengine-%{graphengine_commit} graphengine
 %make_build
 
 %install
-ls
 %{__install} -pDm755 vsznedi3.so %{buildroot}%{_libdir}/vapoursynth/libvsznedi3.so
-%{__install} -pDm755 nnedi3_weights.bin %{buildroot}%{_datadir}/nnedi3/nnedi3_weights.bin
 
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
@@ -45,8 +45,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %license gpl2.txt
 %doc readme.rst
 %{_libdir}/vapoursynth/libvsznedi3.so
-%{_datadir}/nnedi3/nnedi3_weights.bin
 
 
 %changelog
-%autochangelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 2.1^20250517g47e7698-2
+- Depend on separate weights package to prevent collisions
+

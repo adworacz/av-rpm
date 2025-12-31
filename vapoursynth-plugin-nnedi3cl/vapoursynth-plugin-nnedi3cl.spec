@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-nnedi3cl
 Version:        8
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        NNEDI3CL filter for VapourSynth
 
 License:        MIT
@@ -9,6 +9,8 @@ Source0:        https://github.com/HomeOfVapourSynthEvolution/VapourSynth-NNEDI3
 
 BuildRequires:  meson gcc-c++ boost-devel
 BuildRequires:  pkgconfig(vapoursynth) pkgconfig(OpenCL)
+
+Requires:   vapoursynth-plugin-nnedi3-weights
 
 %description
 %summary
@@ -30,7 +32,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %license LICENSE
 %doc README.md
 %{_libdir}/vapoursynth/libnnedi3cl.so
-%{_datadir}/NNEDI3CL/nnedi3_weights.bin
 
 %changelog
-%autochangelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 8-2
+- Depend on separate weights package to prevent collisions
+
