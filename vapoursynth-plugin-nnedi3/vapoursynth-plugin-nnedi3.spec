@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-nnedi3
 Version:        12^20240714g82993ff
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        NNEDI3 filter for VapourSynth
 
 %define commit  82993ff21cf569776fc1a7e5bb60235c00bbeea3
@@ -29,6 +29,7 @@ Requires:   vapoursynth-plugin-nnedi3-weights
 %install
 %make_install
 
+find %{buildroot} -name '*.la' -exec rm -f {} ';'
 find %{buildroot} -name '*.bin' -exec rm -f {} ';'
 
 
@@ -37,6 +38,9 @@ find %{buildroot} -name '*.bin' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libnnedi3.so
 
 %changelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 12^20240714g82993ff-4
+- Cleanup excess la files on older epel builds
+
 * Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 12^20240714g82993ff-3
 - Ensure nnedi3_weights.bin file is removed since we package it separately now
 
