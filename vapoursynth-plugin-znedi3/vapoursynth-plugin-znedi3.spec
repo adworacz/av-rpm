@@ -6,7 +6,7 @@
 
 Name:           vapoursynth-plugin-znedi3
 Version:        2.1^20250517g47e7698
-Release:        2%{?dist}
+Release:        3%{?dist}
 
 Summary:        nnedi3 filter for vapoursynth
 
@@ -38,7 +38,7 @@ rm -rf graphengine && mv graphengine-%{graphengine_commit} graphengine
 %install
 %{__install} -pDm755 vsznedi3.so %{buildroot}%{_libdir}/vapoursynth/libvsznedi3.so
 
-find %{buildroot} -name '*.la' -exec rm -f {} ';'
+find %{buildroot} -name '*.bin' -exec rm -f {} ';'
 
 
 %files
@@ -48,6 +48,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 2.1^20250517g47e7698-3
+- Ensure nnedi3_weights.bin file is removed since we package it separately now
+
 * Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 2.1^20250517g47e7698-2
 - Depend on separate weights package to prevent collisions
 

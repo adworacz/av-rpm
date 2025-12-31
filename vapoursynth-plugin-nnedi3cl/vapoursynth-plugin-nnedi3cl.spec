@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-nnedi3cl
 Version:        8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        NNEDI3CL filter for VapourSynth
 
 License:        MIT
@@ -25,7 +25,7 @@ Requires:   vapoursynth-plugin-nnedi3-weights
 %install
 %meson_install
 
-find %{buildroot} -name '*.la' -exec rm -f {} ';'
+find %{buildroot} -name '*.bin' -exec rm -f {} ';'
 
 
 %files
@@ -34,6 +34,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libnnedi3cl.so
 
 %changelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 8-3
+- Ensure nnedi3_weights.bin file is removed since we package it separately now
+
 * Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 8-2
 - Depend on separate weights package to prevent collisions
 
