@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-zscene
-Version:        0.2
+Version:        0.3
 Release:        1%{?dist}
 Summary:        Scene change detection for Vapoursynth
 
@@ -35,6 +35,9 @@ zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 %{_libdir}/vapoursynth/*
 
 %changelog
+* Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 0.3-1
+- Update to 0.3
+
 * Wed Dec 31 2025 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 0.2-1
 - Update to 0.2
 
