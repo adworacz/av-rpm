@@ -1,3 +1,5 @@
+%global toolchain clang
+
 #%%define     commit  badbc42e58327cd9f2a41c6a88431d02abcc4ffd
 
 Name:       vapoursynth-plugin-eedi3vk
@@ -10,7 +12,7 @@ URL:        https://github.com/Sunflower-Dolls/Vapoursynth-EEDI3VK
 Source0:    https://github.com/Sunflower-Dolls/Vapoursynth-EEDI3VK/archive/refs/tags/R%{version}.tar.gz
 # Source0:    https://github.com/Sunflower-Dolls/Vapoursynth-EEDI3VK/archive/%{commit}.tar.gz
 
-BuildRequires: meson gcc-c++ vulkan-headers vulkan-volk-devel git glslc
+BuildRequires: meson clang vulkan-headers vulkan-volk-devel git glslc
 BuildRequires: pkgconfig(vapoursynth)
 
 %description
