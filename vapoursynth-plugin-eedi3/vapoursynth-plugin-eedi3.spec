@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-eedi3
-Version:        7
-Release:        2%{?dist}
+Version:        8
+Release:        1%{?dist}
 Summary:        Renewed EEDI3 filter for VapourSynth
 
 # %%define commit  d11bdb37c7a7118cd095b53d9f8fbbac02a06ac0
@@ -45,10 +45,12 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libeedi3m.so
 
 %changelog
+* Fri Jan 09 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 8-1
+- Update to r8
+
 * Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 7-2
 - Actually upgrade to r7, remove OpenCL deps and eedi3cl no longer exists
 
 * Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 7-1
 - Update to 7
 
-%autochangelog
