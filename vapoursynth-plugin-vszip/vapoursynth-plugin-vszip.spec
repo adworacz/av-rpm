@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-vszip
-Version:        12
+Version:        13
 Release:        1%{?dist}
 Summary:        VapourSynth Zig Image Process
 
@@ -35,6 +35,9 @@ zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 %{_libdir}/vapoursynth/libvszip.so
 
 %changelog
+* Fri Jan 09 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 13-1
+- Update to R13
+
 * Mon Dec 22 2025 adworacz <561689+adworacz@users.noreply.github.com> - 12-1
 - Upgrade to 12
 
