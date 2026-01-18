@@ -55,6 +55,12 @@ So in the directory that contains the spec file in question:
 dnf repoquery --files foo-package
 ```
 
+## Finding which packages match a specific pkgconfig
+
+```sh
+dnf provides 'pkgconfig(ffnvcodec)'
+```
+
 
 ## References:
 * https://docs.fedoraproject.org/en-US/package-maintainers/Installing_Packager_Tools/
