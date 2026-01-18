@@ -3,14 +3,13 @@
 %define commit  b25561316887c2b0bbc8b364dda6c07fee2cc85a
 
 Name:           vapoursynth-plugin-vship-cuda
-Version:        4.0.2
+Version:        4.1.0
 Release:        1%{?dist}
 Summary:        (CUDA version) VapourSynth plugin for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
 License:        GPL-3.0
-URL:            https://github.com/Line-fr/Vship
-Source0:        https://github.com/Line-fr/Vship/archive/refs/tags/v%{version}.tar.gz
-#Source0:        https://github.com/Line-fr/Vship/archive/%{commit}.tar.gz
+URL:            https://codeberg.org/Line-fr/Vship
+Source0:        https://codeberg.org/Line-fr/Vship/archive/v%{version}.tar.gz
 
 BuildRequires:  gcc-c++ cuda-toolkit
 BuildRequires:  pkgconfig(vapoursynth)
@@ -22,7 +21,7 @@ Conflicts:      vapoursynth-plugin-vship libvship
 %summary
 
 %prep
-%autosetup -n Vship-%{version}
+%autosetup -n vship
 #%%autosetup -n Vship-%{commit}
 
 %build
@@ -48,6 +47,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvship.so
 
 %changelog
+* Sun Jan 18 2026 adworacz <561689+adworacz@users.noreply.github.com> - 4.1.0-1
+- Upgrade to 4.1.0 and Codeberg
+
 * Thu Dec 18 2025 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-1
 - Update to 4.0.2
 
