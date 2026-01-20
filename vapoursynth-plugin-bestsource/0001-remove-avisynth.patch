@@ -1,11 +1,11 @@
-diff -ru bestsource-R13-orig/meson.build bestsource-R13/meson.build
---- bestsource-R13-orig/meson.build	2025-07-13 11:21:43.000000000 -0700
-+++ bestsource-R13/meson.build	2025-07-16 10:05:39.105496608 -0700
-@@ -21,7 +21,6 @@
- )
+diff -ru bestsource-R16-orig/meson.build bestsource-R16/meson.build
+--- bestsource-R16-orig/meson.build	2025-12-25 14:45:55.000000000 -0800
++++ bestsource-R16/meson.build	2026-01-19 18:10:14.053357928 -0800
+@@ -28,7 +28,6 @@
  
- plugin_sources = files(
--    'src/avisynth.cpp',
-     'src/synthshared.cpp',
-     'src/vapoursynth.cpp',
- )
+ if get_option('enable_plugin')
+     sources += files(
+-        'src/avisynth.cpp',
+         'src/synthshared.cpp',
+         'src/vapoursynth.cpp',
+     )
