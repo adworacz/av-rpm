@@ -5,7 +5,7 @@
 %global build_cxxflags %(echo %{optflags} | sed -e 's/-fstack-protector-strong/-Xarch_host -fstack-protector-strong/' -e 's/-fcf-protection/-Xarch_host -fcf-protection/' -e 's/-mtls-dialect=gnu2/-Xarch_host -mtls-dialect=gnu2/')
 
 Name:           vapoursynth-plugin-dfttest2-hip
-Version:        8
+Version:        9
 Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (HIP version)
 
@@ -46,6 +46,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_hiprtc.so
 
 %changelog
+* Wed Jan 21 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9-1
+- Update to v9
+
 * Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 8-1
 - Upgrade to v8
 
