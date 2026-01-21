@@ -1,7 +1,7 @@
 #%%define commit  3fe2c1a68460022d9196ddb2a8200baedaba67c1
 
 Name:           vapoursynth-plugin-dfttest2-cuda
-Version:        8
+Version:        9
 Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (CUDA version)
 
@@ -49,6 +49,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_nvrtc.so
 
 %changelog
+* Wed Jan 21 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9-1
+- Update to v9
+
 * Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 8-1
 - Upgrade to v8
 
