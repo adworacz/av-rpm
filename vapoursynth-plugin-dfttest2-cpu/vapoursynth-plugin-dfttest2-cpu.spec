@@ -1,5 +1,5 @@
 Name:           vapoursynth-plugin-dfttest2-cpu
-Version:        9
+Version:        10
 Release:        1%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (CPU + GCC versions)
 
@@ -46,6 +46,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_gcc.so
 
 %changelog
+* Wed Jan 21 2026 adworacz <561689+adworacz@users.noreply.github.com> - 10-1
+- Update to v10
+
 * Wed Jan 21 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9-1
 - Update to v9
 
