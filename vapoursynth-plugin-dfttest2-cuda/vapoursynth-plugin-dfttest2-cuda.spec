@@ -2,7 +2,7 @@
 
 Name:           vapoursynth-plugin-dfttest2-cuda
 Version:        10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        DFTTest re-implemetation for VapourSynth (CUDA version)
 
 License:        GPL-3.0
@@ -27,7 +27,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
 %cmake \
         -DCMAKE_BUILD_TYPE=Release \
-        -DUSE_NVRTC_STATIC=ON \
+        -DUSE_NVRTC_STATIC=OFF \
         -DENABLE_CPU=OFF \
         -DENABLE_GCC=OFF \
         -DENABLE_CUDA=ON \
@@ -49,6 +49,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libdfttest2_nvrtc.so
 
 %changelog
+* Sat Jan 24 2026 adworacz <561689+adworacz@users.noreply.github.com> - 10-2
+- Disable nvrtc static
+
 * Wed Jan 21 2026 adworacz <561689+adworacz@users.noreply.github.com> - 10-1
 - Update to v10
 
