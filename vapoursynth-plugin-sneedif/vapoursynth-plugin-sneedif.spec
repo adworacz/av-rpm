@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-sneedif
 Version:        3
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        S.N.E.E.D.I.F. Setsugen No Ensemble of Edge Directed Interpolation Functions 
 
 License:        None
@@ -12,7 +12,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  boost-devel
 BuildRequires:  pkgconfig(vapoursynth)
 BuildRequires:  pkgconfig(OpenCL)
-Requires:       vapoursynth-libs
+Requires:       vapoursynth-libs vapoursynth-plugin-nnedi3-weights
 
 Patch0: 0001-fix-meson-build.patch
 
@@ -43,4 +43,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libsneedif.so
 
 %changelog
-%autochangelog
+* Mon Jan 26 2026 adworacz <561689+adworacz@users.noreply.github.com> - 3-2
+- Add nnedi3-weights dependency
+
