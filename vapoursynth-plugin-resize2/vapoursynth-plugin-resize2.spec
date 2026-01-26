@@ -1,10 +1,8 @@
-%global debug_package %{nil}
-
 #%%define commit  15f1a6d2364f536d75cdc2c3c1798c75f807defd
 
 Name:           vapoursynth-plugin-resize2
 Version:        0.3.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        vapoursynth resize2
 
 License:        None
@@ -41,6 +39,9 @@ meson subprojects download
 %{_libdir}/vapoursynth/libresize2.so
 
 %changelog
+* Mon Jan 26 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.3.4-2
+- Enable debug symbols
+
 * Sun Dec 28 2025 adworacz <561689+adworacz@users.noreply.github.com> - 0.3.4-1
 - Update to 0.3.4
 
