@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-bilateralgpu
 Version:        12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Bilateral filter in CUDA and SYCL for VapourSynth. 
 
 #%%define commit  a2198f12f998f582eb703e62385f7dac3389c4eb
@@ -31,7 +31,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
 %cmake \
         -DCMAKE_BUILD_TYPE=Release \
-        -DUSE_NVRTC_STATIC=ON \
+        -DUSE_NVRTC_STATIC=OFF \
         -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' \
         -DCMAKE_CUDA_ARCHITECTURES=all-major
 %cmake_build
@@ -49,6 +49,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Mon Jan 26 2026 adworacz <561689+adworacz@users.noreply.github.com> - 12-2
+- Disable nvrtc static
+
 * Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 12-1
 - Upgrade to v12
 
