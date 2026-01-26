@@ -1,6 +1,6 @@
 Name:           vapoursynth-plugin-bm3dcuda-cuda
 Version:        2.15
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        BM3D denoising filter for VapourSynth, CUDA version.
 
 #%%define commit  200250b3864d50f0eb5f738686d06d9db3b1fbd3
@@ -30,7 +30,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
         -DCMAKE_INSTALL_LIBDIR=%{_libdir}/vapoursynth \
         -DCMAKE_BUILD_TYPE=Release \
         -DVAPOURSYNTH_INCLUDE_DIRECTORY="$(pkg-config --cflags vapoursynth | sed 's|-I||g')" \
-        -DUSE_NVRTC_STATIC=ON \
+        -DUSE_NVRTC_STATIC=OFF \
         -DENABLE_CPU=OFF \
         -DENABLE_CUDA=ON \
         -DCMAKE_CUDA_FLAGS='--threads 0 --use_fast_math -fpic' \
@@ -50,5 +50,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libbm3dcuda_rtc.so
 
 %changelog
+* Mon Jan 26 2026 adworacz <561689+adworacz@users.noreply.github.com> - 2.15-2
+- Disable nvrtc static
+
 * Tue Oct 21 2025 adworacz <561689+adworacz@users.noreply.github.com> - 2.15-1
 - Upgrade to v2.15
