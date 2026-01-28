@@ -1,6 +1,11 @@
+# Output is broken with GCC, apparently.
+# So we use clang
+# https://github.com/HomeOfVapourSynthEvolution/VapourSynth-TCanny/issues/14
+%global toolchain clang
+
 Name:           vapoursynth-plugin-tcanny
 Version:        14
-Release:        %autorelease
+Release:        2%{?dist}
 Summary:        TCanny filter for VapourSynth
 
 License:        GPL-3.0
@@ -32,4 +37,6 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libtcanny.so
 
 %changelog
-%autochangelog
+* Wed Jan 28 2026 adworacz <561689+adworacz@users.noreply.github.com> - 14-2
+- Compile with clang to workaround gcc bug.
+
