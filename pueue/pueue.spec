@@ -5,7 +5,7 @@
 
 Name:           pueue
 Version:        4.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manage your shell commands.
 
 License:        MIT OR Apache-2.0
@@ -32,6 +32,10 @@ even if you no longer have any active ssh sessions.
 
 %build
 cargo build --release --locked
+
+# Change from the overly verbose debug logging to just normal verbosity
+sed -i 's/-vv/-v/' utils/pueued.service
+
 mkdir generated_completions
 ./target/release/%{name} completions bash generated_completions/
 ./target/release/%{name} completions fish generated_completions/
@@ -66,6 +70,9 @@ install -Dpm 0644 generated_completions/_%{name} -t %{buildroot}/%{zsh_completio
 %{zsh_completions_dir}/_%{name}
 
 %changelog
+* Thu Jan 29 2026 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-2
+- Decrease the pueued service logging verbosity
+
 * Tue Dec 30 2025 Andrey Brusnik <dev@shdwchn.io> - 4.0.2-1
 - chore(pueue): Bump to 4.0.2
 
