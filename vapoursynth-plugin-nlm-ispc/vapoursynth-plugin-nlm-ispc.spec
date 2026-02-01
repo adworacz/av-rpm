@@ -1,7 +1,7 @@
 Name:           vapoursynth-plugin-nlm-ispc
 Version:        2
 Release:        %autorelease
-Summary:        DFTTest re-implemetation for VapourSynth (CPU + GCC versions)
+Summary:        Non-local means denoise filter (CPU only), drop-in replacement of the KNLMeansCL for VapourSynth
 
 License:        GPL-3.0
 URL:            https://github.com/AmusementClub/vs-nlm-ispc
