@@ -23,8 +23,7 @@ BuildRequires:  pkgconfig(vapoursynth) pkgconfig(libjxl) pkgconfig(libhwy)
 rm -rf thirdparty/libjxl && mv libjxl-%{libjxl_commit} thirdparty/libjxl
 
 %build
-%cmake \
-        -DCMAKE_BUILD_TYPE=Release \
+%cmake -DCMAKE_BUILD_TYPE=Release
 %cmake_build
 
 %install
