@@ -30,7 +30,7 @@ BuildRequires: gcc-c++ cmake pkgconfig(vapoursynth)
 %files
 %license LICENSE
 %doc README.md RemoveDirt/documentation/*.htm
-%{_libdir}/vapoursynth/libremovedirt.so
+%{_libdir}/vapoursynth/*.so
 
 
 %changelog
