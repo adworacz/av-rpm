@@ -1,3 +1,7 @@
+<div align="center">
+    <p>Brought to you by <a href="https://flawless.media">Flawless Media - Digitizing and Restoration</a></p>
+</div>
+
 # AV RPM
 Welcome to AV RPM, my attempt at bringing a variety of unpackaged utilities to 
 various RPM-based distro's. 
