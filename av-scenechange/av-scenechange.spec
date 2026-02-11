@@ -1,6 +1,6 @@
 Name:           av-scenechange
 Version:        0.22.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Scenechange detection tool written in Rust
 
 License:        MIT
@@ -21,6 +21,20 @@ BuildRequires: pkgconfig(libavfilter) pkgconfig(libswscale) pkgconfig(libswresam
 
 # Vapoursynth support
 BuildRequires: pkgconfig(vapoursynth)
+
+# Limiting to x86_64, as aarch64 seems to produce the following error for now
+# Compiling av-decoders v0.9.0
+# error[E0308]: mismatched types
+#    --> /builddir/build/BUILD/av-scenechange-0.22.1-build/av-scenechange-0.22.1/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/av-decoders-0.9.0/src/helpers/ffms2.rs:640:18
+#     |
+# 640 |     err.Buffer = buffer_ptr;
+#     |     ----------   ^^^^^^^^^^ expected `*mut u8`, found `*mut i8`
+#     |     |
+#     |     expected due to the type of this binding
+#     |
+#     = note: expected raw pointer `*mut u8`
+#                found raw pointer `*mut i8` 
+ExclusiveArch: x86_64
 
 %description
 %summary
@@ -48,6 +62,9 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 
 %changelog
+* Wed Feb 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.22.1-2
+- Disable non-x86_64 builds
+
 * Wed Feb 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.22.1-1
 - Initial commit
 
