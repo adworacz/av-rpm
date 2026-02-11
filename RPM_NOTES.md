@@ -48,6 +48,13 @@ So in the directory that contains the spec file in question:
 2. Fedora: `fedpkg --release f42 srpm && mock -r fedora-42-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/fedora42/x86_64 --resultdir result_foobar foobar.src.rpm`
 3. EPEL: `fedpkg --release epel10 srpm && mock -r rocky+epel-10-x86_64 --addrepo https://developer.download.nvidia.com/compute/cuda/repos/rhel10/x86_64 --resultdir result_foobar foobar.src.rpm`
 
+## COPR dependencies
+To build packages that depend on other packages that already exist in the COPR repo, use a command like:
+
+```sh
+fedpkg --release f43 srpm && mock -r fedora-43-x86_64 --addrepo https://download.copr.fedorainfracloud.org/results/flawlessmedia/av-rpm/fedora-43-x86_64/ --resultdir result_foobar foobar*.src.rpm
+```
+
 # Tips n Tricks
 
 ## Listing files in a package via dnf
