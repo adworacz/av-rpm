@@ -1,15 +1,15 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-manipmv
-Version:        1.2.1
-Release:        %autorelease
+Version:        1.2.2
+Release:        1%{?dist}
 Summary:        A vapoursynth plugin to do potentially useful things with motion vectors that have already been generated. 
 
 License:        LGPL-2.1
 URL:            https://github.com/Mikewando/manipulate-motion-vectors
 Source0:        https://github.com/Mikewando/manipulate-motion-vectors/archive/refs/tags/%{version}.tar.gz
 
-BuildRequires:  zig >= 0.14.0
+BuildRequires:  zig >= 0.15.2
 BuildRequires:  zig-rpm-macros
 BuildRequires:  pkgconfig(vapoursynth)
 
@@ -34,4 +34,6 @@ zig build %{_zig_general_options} %{_zig_project_options} --release=fast
 %{_libdir}/vapoursynth/libmanipmv.so
 
 %changelog
-%autochangelog
+* Mon Mar 02 2026 adworacz <561689+adworacz@users.noreply.github.com> - 1.2.2-1
+- Update to 1.2.2
+
