@@ -4,8 +4,8 @@
 %define dtl_commit b83e617aab99ae85e5be4e3b2074a5ca873fbb8b
 
 Name:       nvenc
-Version:    9.08
-Release:    2%{?dist}
+Version:    9.09
+Release:    1%{?dist}
 Summary:    Hardware encoder for Nvidia
 
 License:    MIT
@@ -67,6 +67,9 @@ rm -rf dtl && mv dtl-%{dtl_commit} dtl
 
 
 %changelog
+* Wed Mar 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9.09-1
+- Update to 9.09
+
 * Sat Nov 29 2025 adworacz <561689+adworacz@users.noreply.github.com> - 9.08-2
 - Bump nvenc to autobuild
 
