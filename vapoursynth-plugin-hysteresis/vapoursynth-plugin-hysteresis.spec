@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-hysteresis
-Version:        1.0.6
+Version:        1.0.7
 Release:        1%{?dist}
 Summary:        Hysteresis filter for VapourSynth
 
@@ -35,6 +35,9 @@ install -Dpm 0755 target/release/libhysteresis.so %{buildroot}%{_libdir}/vapours
 
 
 %changelog
+* Wed Mar 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 1.0.7-1
+- Update to 1.0.7
+
 * Tue Dec 02 2025 adworacz <561689+adworacz@users.noreply.github.com> - 1.0.6-1
 - Upgrade to 1.0.6
 
