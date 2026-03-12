@@ -1,10 +1,10 @@
 %global debug_package %{nil}
 
 %define cppcodec_commit bd6ddf95129e769b50ef63e0f558fa21364f3f65
-%define dtl_commit b83e617aab99ae85e5be4e3b2074a5ca873fbb8b
+%define dtl_commit 32567bb9ec704f09040fb1ed7431a3d967e3df03
 
 Name:       nvenc
-Version:    9.10
+Version:    9.11
 Release:    1%{?dist}
 Summary:    Hardware encoder for Nvidia
 
@@ -14,7 +14,7 @@ Source0:    https://github.com/rigaya/NVEnc/archive/refs/tags/%{version}.tar.gz
 Source1:    https://github.com/tplgy/cppcodec/archive/%{cppcodec_commit}.tar.gz
 Source2:    https://github.com/cubicdaiya/dtl/archive/%{dtl_commit}.tar.gz
 
-BuildRequires: gcc-c++ cuda-toolkit
+BuildRequires: gcc-c++ cuda-toolkit meson
 
 # FFmpeg lib dependencies
 BuildRequires: pkgconfig(libavutil) pkgconfig(libavcodec) pkgconfig(libavformat) pkgconfig(libavdevice)
@@ -67,6 +67,9 @@ rm -rf dtl && mv dtl-%{dtl_commit} dtl
 
 
 %changelog
+* Thu Mar 12 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9.11-1
+- Update to 9.11
+
 * Wed Mar 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 9.10-1
 - Update to 9.10
 
