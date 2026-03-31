@@ -1,5 +1,5 @@
 Name:           vapoursynth-plugin-akarin
-Version:        1.1.0
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        Akarin's experimental VapourSynth plugin: (1) an enhanced LLVM-based std.Expr (aka lexpr), Select, PropExpr, Text and Tmpl. (2) DLISR. (3) DLVFX (4) CAMBI.
 
@@ -34,6 +34,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Tue Mar 31 2026 adworacz <561689+adworacz@users.noreply.github.com> - 1.2.0-1
+- Upgrade to 1.2.0
+
 * Tue Oct 21 2025 Austin Dworaczyk Wiltshire <austin@flawless.media> - 1.1.0-1
 - Upgrade to v1.1.0
 
