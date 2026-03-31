@@ -1,14 +1,14 @@
 %define commit  0e7d9172775763884908b07c91c6db2a68fc770e
 
 Name:           vapoursynth-plugin-resize2
-Version:        0.3.4^20260201g0e7d917
+Version:        0.4.0
 Release:        1%{?dist}
 Summary:        vapoursynth resize2
 
 License:        None
 URL:            https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2
-# Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/refs/tags/%{version}.tar.gz
-Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/%{commit}.tar.gz
+Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/refs/tags/%{version}.tar.gz
+# Source0:        https://github.com/Jaded-Encoding-Thaumaturgy/vapoursynth-resize2/archive/%{commit}.tar.gz
 
 BuildRequires:  meson gcc-c++
 BuildRequires:  pkgconfig(vapoursynth)
@@ -20,8 +20,8 @@ BuildRequires:  git
 %{summary}
 
 %prep
-# %%autosetup -n vapoursynth-resize2-%{version}
-%autosetup -n vapoursynth-resize2-%{commit}
+%autosetup -n vapoursynth-resize2-%{version}
+# %%autosetup -n vapoursynth-resize2-%{commit}
 
 meson subprojects download
 
@@ -39,6 +39,9 @@ meson subprojects download
 %{_libdir}/vapoursynth/libresize2.so
 
 %changelog
+* Tue Mar 31 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.4.0-1
+- Upgrade to 0.4.0
+
 * Mon Feb 02 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.3.4^20260201g0e7d917-1
 - Update to specific latest commit to prevent ffmpeg crashes
 
