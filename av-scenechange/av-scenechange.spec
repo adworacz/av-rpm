@@ -1,6 +1,6 @@
 Name:           av-scenechange
-Version:        0.22.1
-Release:        2%{?dist}
+Version:        0.22.2
+Release:        1%{?dist}
 Summary:        Scenechange detection tool written in Rust
 
 License:        MIT
@@ -62,6 +62,9 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 
 %changelog
+* Tue Mar 31 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.22.2-1
+- Upgrade to 0.22.2
+
 * Wed Feb 11 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.22.1-2
 - Disable non-x86_64 builds
 
