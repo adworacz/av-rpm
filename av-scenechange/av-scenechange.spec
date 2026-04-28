@@ -1,5 +1,5 @@
 Name:           av-scenechange
-Version:        0.22.2
+Version:        0.23.0
 Release:        1%{?dist}
 Summary:        Scenechange detection tool written in Rust
 
@@ -62,6 +62,9 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 
 %changelog
+* Tue Apr 28 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.23.0-1
+- Upgrade to 0.23.0
+
 * Tue Mar 31 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.22.2-1
 - Upgrade to 0.22.2
 
