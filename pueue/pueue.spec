@@ -4,8 +4,8 @@
 %global debug_package %{nil}
 
 Name:           pueue
-Version:        4.0.2
-Release:        2%{?dist}
+Version:        4.0.4
+Release:        1%{?dist}
 Summary:        Manage your shell commands.
 
 License:        MIT OR Apache-2.0
@@ -70,6 +70,9 @@ install -Dpm 0644 generated_completions/_%{name} -t %{buildroot}/%{zsh_completio
 %{zsh_completions_dir}/_%{name}
 
 %changelog
+* Wed May 13 2026 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.4-1
+- Upgrade to 4.0.4
+
 * Thu Jan 29 2026 adworacz <561689+adworacz@users.noreply.github.com> - 4.0.2-2
 - Decrease the pueued service logging verbosity
 
