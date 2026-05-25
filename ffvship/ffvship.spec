@@ -18,10 +18,6 @@ Provides:       ffvship ffvship-hip = %{version}-%{release} ffvship-cuda = %{ver
 Conflicts:      ffvship
 Obsoletes:      ffvship-hip < 4.0.1-2%{?dist} ffvship-cuda < 4.0.1-2%{?dist}
 
-# Only CUDA builds on aarch64, but CUDA only provides aarch64 repos for EPEL,
-# and EPEL doesn't provide ffms2 (which this pacakge requires).
-ExclusiveArch: x86_64
-
 %description
 %summary
 Replaces previous ffvship-hip and ffvship-cuda packages since the binary was merged into one and 
