@@ -18,6 +18,8 @@ Source0:        https://codeberg.org/Line-fr/Vship/archive/v%{version}.tar.gz
 BuildRequires:  gcc-c++ rocm-hip-devel rocm-cmake rocm-rpm-macros hipfft-devel
 BuildRequires:  pkgconfig(vapoursynth)
 
+Requires: rocm-hip
+
 Provides:       vapoursynth-plugin-vship libvship
 Conflicts:      vapoursynth-plugin-vship libvship
 
