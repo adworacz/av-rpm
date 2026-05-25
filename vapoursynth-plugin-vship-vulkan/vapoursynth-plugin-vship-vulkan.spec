@@ -15,8 +15,6 @@ BuildRequires:  pkgconfig(vapoursynth) pkgconfig(vulkan)
 Provides:       vapoursynth-plugin-vship libvship
 Conflicts:      vapoursynth-plugin-vship libvship
 
-ExclusiveArch: x86_64
-
 %description
 %summary
 
