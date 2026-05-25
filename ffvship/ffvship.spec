@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           ffvship
-Version:        4.1.0
+Version:        5.0.1
 Release:        1%{?dist}
 Summary:        Standalone CLI for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
@@ -47,6 +47,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_bindir}/*
 
 %changelog
+* Mon May 25 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 5.0.1-1
+- Update to 5.0.1
+
 * Sun Jan 18 2026 adworacz <561689+adworacz@users.noreply.github.com> - 4.1.0-1
 - Update to 4.1 and Codeberg
 
