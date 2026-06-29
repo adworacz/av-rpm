@@ -9,7 +9,7 @@ License:        GPL-3.0
 URL:            https://codeberg.org/Line-fr/Vship
 Source0:        https://codeberg.org/Line-fr/Vship/archive/v%{version}.tar.gz
 
-BuildRequires:  clang libvship
+BuildRequires:  clang vapoursynth-plugin-vship-vulkan
 BuildRequires:  pkgconfig(ffms2) pkgconfig(zimg)
 
 Requires: libvship
