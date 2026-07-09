@@ -1,0 +1,14 @@
+diff -ru MiniDeen-r11-orig/CMakeLists.txt MiniDeen-r11/CMakeLists.txt
+--- MiniDeen-r11-orig/CMakeLists.txt	2026-07-09 11:35:32.480970318 -0700
++++ MiniDeen-r11/CMakeLists.txt	2026-07-09 11:36:36.660375818 -0700
+@@ -6,9 +6,7 @@
+ add_library(neo-minideen SHARED main.cpp src/version.rc ${CODE} ${CODE_IMPL})
+ set_property(TARGET neo-minideen PROPERTY CXX_STANDARD 17)
+ 
+-find_package(Git REQUIRED)
+-execute_process(COMMAND ${GIT_EXECUTABLE} describe --first-parent --tags --always OUTPUT_VARIABLE GIT_REPO_VERSION)
+-string(REGEX REPLACE "(r[0-9]+).*" "\\1" VERSION ${GIT_REPO_VERSION})
++string(REGEX REPLACE "(r[0-9]+).*" "\\1" VERSION "11")
+ 
+ configure_file (
+   "${PROJECT_SOURCE_DIR}/src/version.hpp.in"
