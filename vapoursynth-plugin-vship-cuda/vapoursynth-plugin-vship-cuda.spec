@@ -3,7 +3,7 @@
 %define commit  b25561316887c2b0bbc8b364dda6c07fee2cc85a
 
 Name:           vapoursynth-plugin-vship-cuda
-Version:        5.0.2
+Version:        5.1.0
 Release:        1%{?dist}
 Summary:        (CUDA version) VapourSynth plugin for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
@@ -29,7 +29,7 @@ Conflicts:      vapoursynth-plugin-vship libvship
 export PATH="$PATH:/usr/local/cuda/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 
-%make_build buildcudaall
+%make_build BACKEND=Cuda ARCH=ALL
 
 %install
 # %%make_install
@@ -47,6 +47,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvship.so
 
 %changelog
+* Mon Aug 03 2026 adworacz <561689+adworacz@users.noreply.github.com> - 5.1.0-1
+- Upgrade to 5.1.0
+
 * Mon Jun 29 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 5.0.2-1
 - Update to 5.0.2
 

@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           vapoursynth-plugin-vship-vulkan
-Version:        5.0.2
+Version:        5.1.0
 Release:        1%{?dist}
 Summary:        (Vulkan version) VapourSynth plugin for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
@@ -22,7 +22,7 @@ Conflicts:      vapoursynth-plugin-vship libvship
 %autosetup -n vship
 
 %build
-%make_build buildVulkan
+%make_build build BACKEND=Vulkan
 
 %install
 # %%make_install
@@ -40,6 +40,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvship.so
 
 %changelog
+* Mon Aug 03 2026 adworacz <561689+adworacz@users.noreply.github.com> - 5.1.0-1
+- Upgrade to 5.1.0
+
 * Mon Jun 29 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 5.0.2-1
 - Update to 5.0.2
 
