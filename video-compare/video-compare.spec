@@ -1,5 +1,5 @@
 Name:       video-compare
-Version:    20260121
+Version:    20260708
 Release:    1%{?dist}
 Summary:    Split screen video comparison tool using FFmpeg and SDL2 
 
@@ -35,6 +35,9 @@ BuildRequires: pkgconfig(libavfilter) pkgconfig(libswresample) pkgconfig(libswsc
 
 
 %changelog
+* Mon Aug 03 2026 adworacz <561689+adworacz@users.noreply.github.com> - 20260708-1
+- Upgrade to 20260708
+
 * Mon Jan 26 2026 adworacz <561689+adworacz@users.noreply.github.com> - 20260121-1
 - Initial commit
 
