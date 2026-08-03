@@ -7,7 +7,7 @@
 %global build_cxxflags %(echo %{optflags} | sed -e 's/-fstack-protector-strong/-Xarch_host -fstack-protector-strong/' -e 's/-fcf-protection/-Xarch_host -fcf-protection/' -e 's/-mtls-dialect=gnu2/-Xarch_host -mtls-dialect=gnu2/')
 
 Name:           vapoursynth-plugin-vship-hip
-Version:        5.0.2
+Version:        5.1.0
 Release:        1%{?dist}
 Summary:        (AMD HIP version) VapourSynth plugin for GPU-accelerated visual fidelity metrics, focusing on SSIMULACRA2 & Butteraugli. 
 
@@ -32,7 +32,7 @@ ExclusiveArch: x86_64
 %autosetup -n vship
 
 %build
-%make_build buildall
+%make_build build BACKEND=HIP ARCH=ALL
 
 %install
 # %%make_install
@@ -50,6 +50,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_libdir}/vapoursynth/libvship.so
 
 %changelog
+* Mon Aug 03 2026 adworacz <561689+adworacz@users.noreply.github.com> - 5.1.0-1
+- Upgrade to 5.1.0
+
 * Mon Jun 29 2026 Austin Dworaczyk Wiltshire <561689+adworacz@users.noreply.github.com> - 5.0.2-1
 - Update to 5.0.2
 
