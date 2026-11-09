@@ -1,5 +1,5 @@
 Name:           av1an
-Version:        0.5.2
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Cross-platform command-line AV1 / VP9 / HEVC / H264 encoding framework with per scene quality encoding
 
@@ -44,6 +44,9 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 
 %changelog
+* Mon Nov 09 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.6.0-1
+- Upgrade to 0.6.0
+
 * Thu Feb 12 2026 adworacz <561689+adworacz@users.noreply.github.com> - 0.5.2-1
 - Update to 0.5.2
 
