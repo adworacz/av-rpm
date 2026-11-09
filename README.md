@@ -2,6 +2,11 @@
     <p>Brought to you by <a href="https://flawless.media">Flawless Media - Digitizing and Restoration</a></p>
 </div>
 
+**Note on VapourSynth Plugins: Many VS plugins are now packaged using PyPi,
+per the [changes in VS r74](https://www.vapoursynth.com/2026/03/26/new-packaging-and-install-methods-in-r74/). 
+As such, using this repo for VS plugins is often no longer necessary. 
+Support for VS plugins in this repo will be slowly phased out, and it's recommended to move to PyPi for your plugin needs.**
+
 # AV RPM
 Welcome to AV RPM, my attempt at bringing a variety of unpackaged utilities to 
 various RPM-based distro's. 
