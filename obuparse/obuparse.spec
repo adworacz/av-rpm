@@ -1,13 +1,14 @@
-%define commit 665c8fbd8e078868c3509f17a53b2970fad83520
+#%define commit 665c8fbd8e078868c3509f17a53b2970fad83520
 
 Name:           obuparse
-Version:        0^20250828g665c8fb
+Version:        2.0.2
 Release:        1%{?dist}
 Summary:        A simple and portable single file AV1 OBU parser written in mostly C89 with a tiny bit of C99, with a permissive license.
 
 License:        ISC
 URL:            https://github.com/dwbuiten/obuparse
-Source0:        https://github.com/dwbuiten/obuparse/archive/%{commit}/%{name}-%{version}.tar.gz
+# Source0:        https://github.com/dwbuiten/obuparse/archive/%{commit}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/dwbuiten/obuparse/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  make
 BuildRequires:  gcc
@@ -28,7 +29,8 @@ developing applications that use %{name}.
 
 
 %prep
-%autosetup -n %{name}-%{commit}
+#%%autosetup -n %{name}-%{commit}
+%autosetup -n %{name}-%{version}
 
 
 %build
@@ -58,5 +60,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Mon Nov 09 2026 adworacz <561689+adworacz@users.noreply.github.com> - 2.0.2-1
+- Upgrade to 2.0.2
+
 * Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 0^20250828g665c8fb-1
 - Upgrade to 20250828 commit.
