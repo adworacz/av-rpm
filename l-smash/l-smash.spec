@@ -1,9 +1,9 @@
-Name:           l-smash
-Version:        2.18.0^20241028g30270d0
-Release:        2%{?dist}
-Summary:        Vimeo L-SMASH
+%define commit 4a21f2155b59d7176094db10dec7bbc274a4b9f3
 
-%define commit 30270d0d8b551b36b6f46c43bd3ffe997f13e157
+Name:           l-smash
+Version:        2.18.0^20260811g4a21f21
+Release:        1%{?dist}
+Summary:        Vimeo L-SMASH
 
 License:        ISC
 URL:            https://github.com/vimeo/l-smash
@@ -59,6 +59,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Mon Nov 09 2026 adworacz <561689+adworacz@users.noreply.github.com> - 2.18.0^20260811g4a21f21-1
+- Upgrade to 2.18.0^20260811g4a21f21
+
 * Wed Dec 03 2025 adworacz <561689+adworacz@users.noreply.github.com> - 2.18.0^20241028g30270d0-2
 - Bump to rebuild
 
